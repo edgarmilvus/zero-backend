@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 4 - FFmpeg in the browser</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "@ffmpeg/ffmpeg": "/vendor/@ffmpeg/ffmpeg/dist/esm/index.js",
+          "@ffmpeg/util": "/vendor/@ffmpeg/util/dist/esm/index.js"
+        }
+      }
+    </script>
+    <style>
+      body {
+        font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        margin: 0;
+        padding: 28px;
+        background: #f1ede3;
+        color: #14213a;
+      }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 14px; color: #4a5568; }
+      button { font: inherit; padding: 6px 12px; }
+      progress { width: 320px; height: 10px; }
+      pre {
+        padding: 16px;
+        background: #14213a;
+        color: #e8e2d4;
+        border-radius: 4px;
+        overflow-x: auto;
+        min-height: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 4 - 31 MB of FFmpeg, in this tab</h1>
+    <p id="status">the core is not loaded until you press the button</p>
+    <p>
+      The clip is two seconds of synthetic video with a sine tone, 33 kB. The transcode happens
+      here: watch the network panel after the first load and you will see nothing leave.
+    </p>
+    <p><progress id="bar" value="0" max="1"></progress></p>
+    <button id="run">Transcode the fixture</button>
+    <pre id="out"></pre>
+    <script type="module" src="./transcode-client.ts"></script>
+  </body>
+</html>
