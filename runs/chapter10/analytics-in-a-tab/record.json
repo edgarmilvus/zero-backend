@@ -1,0 +1,38 @@
+{
+  "id": "analytics-in-a-tab",
+  "chapter": 10,
+  "workload": "one million generated events, grouped by kind, as a table and as parquet",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T21:29:53.296Z",
+  "browser": "Chrome 157.0.8103.79",
+  "duckdb": "v1.5.4",
+  "bundle": "eh",
+  "wasmBytes": 35913747,
+  "rows": 1000000,
+  "sum": 499995000,
+  "coldStartMs": 725.6199999973178,
+  "fetchMs": 8.530000001192093,
+  "countMs": 390.28999999910593,
+  "scanMs": 68.15000000596046,
+  "warmMs": 28.844999998807907,
+  "node": {
+    "coldMs": 681.1709999999999,
+    "createMs": 110.42737499999998,
+    "aggregateMs": 40.744707999999946,
+    "topMs": 10.273957999999993,
+    "parquetBytes": 2422153,
+    "csvBytes": 23267517,
+    "writeMs": 632.0499159999999,
+    "csvWriteMs": 349.1624160000001,
+    "countMs": 17.886749999999665,
+    "scanMs": 47.15958299999966,
+    "jsBuildMs": 83.43037499999991,
+    "jsGroupMs": 25.886833000000024,
+    "jsRssMb": 146
+  },
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "18f8d8babc80365fe658d05fac1d74abc082a2c767430d495e103ad911c7e56c",
+    "duckdb": "1.33.1-dev57.0"
+  }
+}

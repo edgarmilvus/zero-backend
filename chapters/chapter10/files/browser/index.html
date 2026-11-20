@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 10 - a columnar engine in the tab</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "@duckdb/duckdb-wasm": "/vendor/@duckdb/duckdb-wasm/dist/duckdb-browser.mjs",
+          "apache-arrow": "/vendor/apache-arrow/Arrow.dom.mjs",
+          "tslib": "/vendor/tslib/tslib.es6.mjs",
+          "flatbuffers": "/vendor/flatbuffers/mjs/flatbuffers.js"
+        }
+      }
+    </script>
+    <style>
+      body {
+        font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        margin: 0;
+        padding: 28px;
+        background: #f1ede3;
+        color: #14213a;
+      }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 14px; color: #4a5568; max-width: 74ch; }
+      button { font: inherit; padding: 6px 12px; }
+      pre {
+        padding: 16px;
+        background: #14213a;
+        color: #e8e2d4;
+        border-radius: 4px;
+        overflow-x: auto;
+        min-height: 160px;
+      }
+      .hint { color: #7a6a55; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 10 - a million rows, one question</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      This page fetches <code>events.parquet</code> - 2.3 MB, one million events - and asks DuckDB for
+      the same group by the node half runs. The file is never parsed into JavaScript objects: the
+      engine scans the compressed columns directly, and the wasm is served from the lockfile rather
+      than a CDN.
+    </p>
+    <button id="run">Fetch 2.3 MB and scan 1,000,000 rows</button>
+    <p class="hint">First run pays for 35 MB of WebAssembly; the answers after that are the queries.</p>
+    <pre id="out">no run yet</pre>
+    <script type="module" src="./duck-client.ts"></script>
+  </body>
+</html>

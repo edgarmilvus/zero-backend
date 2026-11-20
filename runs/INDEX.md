@@ -10,3 +10,4 @@
 | voice-trim | 7 | chrome | voice.wav 258 kB | -10.83 LUFS | 1.80 s cut | 2026-11-20 | [voice-trim](./chapter07/voice-trim/record.json) |
 | chunked-hash | 8 | chrome | 0.27 GB | 140 ms | 67 MB per read | 2026-11-20 | [chunked-hash](./chapter08/chunked-hash/record.json) |
 | docs-in-a-tab | 9 | chrome | 1000 rows, idb:// | 247 ms open | 1000 rows | 2026-11-20 | [docs-in-a-tab](./chapter09/docs-in-a-tab/record.json) |
+| analytics-in-a-tab | 10 | chrome | 1M rows, 2.3 MB parquet | 1221 ms | — | 2026-11-20 | [analytics-in-a-tab](./chapter10/analytics-in-a-tab/record.json) |
