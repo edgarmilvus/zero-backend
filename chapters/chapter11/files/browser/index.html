@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 11 - search by meaning</title>
+    <style>
+      body {
+        font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        margin: 0;
+        padding: 26px;
+        background: #f1ede3;
+        color: #14213a;
+      }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      h2 { font-size: 13px; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.06em; color: #7a6a55; }
+      p { margin: 0 0 12px; color: #4a5568; max-width: 86ch; }
+      .buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+      button { font: inherit; font-size: 12px; padding: 5px 9px; cursor: pointer; }
+      button:disabled { cursor: progress; opacity: 0.6; }
+      .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+      section { background: #fff; border: 1px solid #d8d0be; padding: 10px 12px; border-radius: 3px; }
+      ol { margin: 0; padding-left: 22px; }
+      li { margin-bottom: 6px; font-size: 11.5px; line-height: 1.4; }
+      .score { color: #14213a; font-weight: 700; }
+      .topic { color: #7a6a55; }
+      .query { font-size: 15px; color: #14213a; margin: 10px 0 8px; }
+      .summary { margin-top: 12px; font-size: 12px; }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 11 - forty notes, asked by meaning</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      The vectors are the model's real output, committed as <code>embeddings.json</code>: 40 notes and
+      8 questions, 384 dimensions each. Pick a question. The left column compares vectors; the right
+      counts words, which is what a <code>like '%word%'</code> does.
+    </p>
+    <div class="buttons">
+      <button data-query="q1">where do my files go when I close the tab</button>
+      <button data-query="q2">run a big C program inside the page</button>
+      <button data-query="q3">keep a huge list scrolling without stutter</button>
+      <button data-query="q4">ask questions about data with no backend</button>
+      <button data-query="q5">why is a large module slow the first time it runs</button>
+      <button data-query="q6">store pictures on the device and skip the upload</button>
+      <button data-query="q7">make a slow computation stop freezing the screen</button>
+      <button data-query="q8">what happens to my app when the internet drops</button>
+    </div>
+    <div id="out">no search yet</div>
+    <script type="module" src="./search-client.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+{
+  "id": "search-by-meaning",
+  "chapter": 11,
+  "workload": "forty notes and eight questions, searched by meaning and by words",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T21:51:19.946Z",
+  "browserVersion": "Chrome 157.0.8103.79",
+  "model": "Xenova/all-MiniLM-L6-v2",
+  "dtype": "q8",
+  "dims": 384,
+  "loadMs": 318.99583300000006,
+  "embedMs": 122.52212499999996,
+  "texts": 48,
+  "fixtureBytes": 160542,
+  "modelBytes": 23685047,
+  "semantic": 0.7,
+  "keyword": 0.375,
+  "perQuery": [
+    {
+      "id": "q1",
+      "semantic": 1,
+      "keyword": 0.2
+    },
+    {
+      "id": "q2",
+      "semantic": 0.6,
+      "keyword": 0
+    },
+    {
+      "id": "q3",
+      "semantic": 0.8,
+      "keyword": 0.4
+    },
+    {
+      "id": "q4",
+      "semantic": 0.6,
+      "keyword": 0.4
+    },
+    {
+      "id": "q5",
+      "semantic": 0.6,
+      "keyword": 0.8
+    },
+    {
+      "id": "q6",
+      "semantic": 0.6,
+      "keyword": 0.6
+    },
+    {
+      "id": "q7",
+      "semantic": 0.8,
+      "keyword": 0.6
+    },
+    {
+      "id": "q8",
+      "semantic": 0.6,
+      "keyword": 0
+    }
+  ],
+  "recall5": 1,
+  "floatBytes": 61440,
+  "int8Bytes": 15360,
+  "browser": {
+    "query": "where do my files go when I close the tab",
+    "semanticHits": 5,
+    "keywordHits": 1,
+    "int8Keeps": 5,
+    "searchMs": 11.975000001490116
+  }
+}
