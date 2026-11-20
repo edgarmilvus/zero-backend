@@ -1,0 +1,69 @@
+{
+  "id": "image-pipeline",
+  "chapter": 6,
+  "workload": "cover.heic and cover.jpg, both to 320 wide WebP at quality 0.8",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T14:54:50.770Z",
+  "browser": "Chrome 157.0.8103.79",
+  "formats": {
+    "image/webp": true,
+    "image/jpeg": true,
+    "image/avif": false
+  },
+  "results": [
+    {
+      "name": "cover.heic",
+      "inputBytes": 6190,
+      "outputBytes": 4436,
+      "format": "image/webp",
+      "width": 320,
+      "height": 180,
+      "decodeMs": 9.370000001043081,
+      "encodeMs": 4.239999998360872,
+      "metadataRemoved": 0
+    },
+    {
+      "name": "cover.jpg",
+      "inputBytes": 8426,
+      "outputBytes": 4604,
+      "format": "image/webp",
+      "width": 180,
+      "height": 320,
+      "decodeMs": 0.8999999985098839,
+      "encodeMs": 3.875,
+      "metadataRemoved": 1
+    }
+  ],
+  "cold": [
+    {
+      "name": "cover.heic",
+      "inputBytes": 6190,
+      "outputBytes": 4436,
+      "format": "image/webp",
+      "width": 320,
+      "height": 180,
+      "decodeMs": 47.41499999910593,
+      "encodeMs": 7.199999999254942,
+      "metadataRemoved": 0
+    },
+    {
+      "name": "cover.jpg",
+      "inputBytes": 8426,
+      "outputBytes": 4604,
+      "format": "image/webp",
+      "width": 180,
+      "height": 320,
+      "decodeMs": 3.780000001192093,
+      "encodeMs": 5.385000001639128,
+      "metadataRemoved": 1
+    }
+  ],
+  "heicSegments": 0,
+  "jpegSegments": 7,
+  "strippedSegments": 1,
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "bf54ab8078ce3ec52cb5d36158c0bfec90941fbbcc0078540bf07e4311755c55",
+    "libheif": "1.23.5"
+  }
+}

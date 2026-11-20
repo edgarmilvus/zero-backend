@@ -6,3 +6,4 @@
 | opfs-roundtrip | 3 | chrome | eight 64 kB files | peak 4 in flight | 524288 bytes | 2026-11-20 | [opfs-roundtrip](./chapter03/opfs-roundtrip/record.json) |
 | transcode-fixture | 4 | chrome | sample.mp4 34 kB | 75 ms | 24051 bytes out | 2026-11-20 | [transcode-fixture](./chapter04/transcode-fixture/record.json) |
 | canvas-clip | 5 | chrome | 60 canvas frames | 178 ms encode | 58165 bytes | 2026-11-20 | [canvas-clip](./chapter05/canvas-clip/record.json) |
+| image-pipeline | 6 | chrome | heic 6 kB + jpeg 8 kB | decode 9 / 1 ms | 4436 bytes out | 2026-11-20 | [image-pipeline](./chapter06/image-pipeline/record.json) |

@@ -19,6 +19,7 @@
     "@ffmpeg/ffmpeg": "^0.12.15",
     "@ffmpeg/util": "^0.12.2",
     "@types/node": "^26.6.6",
+    "libheif-js": "^1.23.5",
     "playwright-core": "^1.65.1",
     "typescript": "^7.0.2"
   }
