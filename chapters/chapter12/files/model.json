@@ -1,0 +1,20 @@
+{
+  "model": "Xenova/all-MiniLM-L6-v2",
+  "dtype": "q8",
+  "dims": 384,
+  "files": [
+    {
+      "path": "config.json",
+      "bytes": 650
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 711661
+    },
+    {
+      "path": "onnx/model_quantized.onnx",
+      "bytes": 22972370
+    }
+  ],
+  "totalBytes": 23684681
+}

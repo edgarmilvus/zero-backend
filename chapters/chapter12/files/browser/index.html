@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 12 - the model in the page</title>
+    <style>
+      body {
+        font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        margin: 0;
+        padding: 26px;
+        background: #f1ede3;
+        color: #14213a;
+      }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 12px; color: #4a5568; max-width: 80ch; }
+      textarea { width: 100%; max-width: 620px; font: inherit; font-size: 13px; padding: 7px; }
+      .buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 14px; }
+      button { font: inherit; font-size: 12px; padding: 6px 10px; cursor: pointer; }
+      button:disabled { cursor: progress; opacity: 0.6; }
+      pre {
+        padding: 16px;
+        background: #14213a;
+        color: #e8e2d4;
+        border-radius: 4px;
+        overflow-x: auto;
+        min-height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 12 - the model, in the tab, off the frame</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      The weights are the 23 MB the install downloaded, served from <code>/models/</code>: no CDN, no
+      key, no request after the first load. The worker compiles them and embeds text; the frame
+      monitor counts the longest gap between paints while it does.
+    </p>
+    <textarea id="text" rows="2">where do my files go when I close the tab</textarea>
+    <div class="buttons">
+      <button id="warm">Warm the worker</button>
+      <button id="main">Load the same model on the main thread</button>
+      <button id="search">Embed and search</button>
+    </div>
+    <pre id="out">no run yet</pre>
+    <script type="module" src="./client.ts"></script>
+  </body>
+</html>

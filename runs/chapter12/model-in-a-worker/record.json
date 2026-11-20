@@ -1,0 +1,37 @@
+{
+  "id": "model-in-a-worker",
+  "chapter": 12,
+  "workload": "23 MB of weights in a worker, the same load on the main thread, one embedding",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T22:09:32.680Z",
+  "browser": "Chrome 157.0.8103.79",
+  "model": "Xenova/all-MiniLM-L6-v2",
+  "dtype": "q8",
+  "dims": 384,
+  "modelBytes": 23684681,
+  "worker": {
+    "loadMs": 862.2550000026822,
+    "maxGapMs": 16.670000000000073,
+    "frames": 54
+  },
+  "main": {
+    "loadMs": 480.9050000011921,
+    "maxGapMs": 215.28999999880784,
+    "frames": 19
+  },
+  "embedMs": 118.0300000011921,
+  "warmEmbedMs": 24.05000000447035,
+  "searchMs": 1.2950000017881393,
+  "hits": [
+    "s9",
+    "s3",
+    "s10",
+    "s1",
+    "s6"
+  ],
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "e7c83d203ddc8592836d6045763822bf78187450162cfec893d83b0e46bdc6fb",
+    "transformers": "4.3.2"
+  }
+}
