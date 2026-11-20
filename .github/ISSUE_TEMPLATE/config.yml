@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the setup section first
+    url: https://github.com/edgarmilvus/zero-backend#readme
+    about: The node version, the gate, and how to run a single chapter.

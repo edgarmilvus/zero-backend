@@ -1,0 +1,61 @@
+name: A listing does not run
+description: A script or a page in the repository fails, prints the wrong thing, or cannot be installed.
+title: "chN listing — "
+labels: ["code"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The facts below are what makes a report reproducible. Without them the first
+        three replies are questions.
+  - type: input
+    id: chapter
+    attributes:
+      label: Chapter
+      placeholder: "1"
+    validations:
+      required: true
+  - type: input
+    id: listing
+    attributes:
+      label: Listing
+      description: The path under the repository root, as the book prints it.
+      placeholder: "chapters/chapter01/files/01_price_one_job.ts"
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: The command you ran
+      render: shell
+      placeholder: "node chapters/chapter01/files/01_price_one_job.ts"
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Full output
+      description: The last 30 lines are enough, but include the error line itself and the exit code.
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Node, browser and OS
+      description: The gate prints the node version with `node -v`. Name the browser only for the pages under files/browser.
+      placeholder: "node v24.3.0, Chrome 157.0.8103.79 on macOS 15.2"
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Does it happen in another browser?
+      description: For a page, try one second browser before opening the issue. The answer is the difference between a bug in the book and a bug in one engine.
+      placeholder: "same in Firefox 141 / only in Safari 18"
+  - type: textarea
+    id: modules
+    attributes:
+      label: npm ls (optional)
+      render: shell
+      placeholder: "npm ls --depth=0"
