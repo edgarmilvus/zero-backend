@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 9 - a database in the tab</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "@electric-sql/pglite": "/vendor/@electric-sql/pglite/dist/index.js"
+        }
+      }
+    </script>
+    <style>
+      body {
+        font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        margin: 0;
+        padding: 28px;
+        background: #f1ede3;
+        color: #14213a;
+      }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 14px; color: #4a5568; }
+      button { font: inherit; padding: 6px 12px; }
+      pre {
+        padding: 16px;
+        background: #14213a;
+        color: #e8e2d4;
+        border-radius: 4px;
+        overflow-x: auto;
+        min-height: 140px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 9 - Postgres, in this tab</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      A real Postgres, compiled to WebAssembly, with the same migrations the node half uses. The
+      database is called <code>idb://</code> so the rows survive a reload; open devtools and the
+      network panel shows no request after the first load.
+    </p>
+    <button id="run">Open, migrate, insert 1000</button>
+    <pre id="out">no run yet</pre>
+    <script type="module" src="./db-client.ts"></script>
+  </body>
+</html>

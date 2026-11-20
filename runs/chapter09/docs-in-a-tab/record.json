@@ -1,0 +1,44 @@
+{
+  "id": "docs-in-a-tab",
+  "chapter": 9,
+  "workload": "1000 notes in a Postgres in the tab",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T20:47:21.728Z",
+  "browser": "Chrome 157.0.8103.79",
+  "version": 3,
+  "loadMs": 247.125,
+  "rows": 1000,
+  "searchMs": 16.174999997019768,
+  "matches": 11,
+  "results": [
+    {
+      "id": 43,
+      "title": "note 42"
+    },
+    {
+      "id": 421,
+      "title": "note 420"
+    },
+    {
+      "id": 422,
+      "title": "note 421"
+    },
+    {
+      "id": 423,
+      "title": "note 422"
+    },
+    {
+      "id": 424,
+      "title": "note 423"
+    }
+  ],
+  "persistent": true,
+  "server": "PostgreSQL 18.7",
+  "firstOpenMs": 1646.640000000596,
+  "afterReload": 1000,
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "7c9197534b426ec106466b541c495f28765969c6e4ab32de26c235eceb15a7ed",
+    "pglite": "0.5.17"
+  }
+}
