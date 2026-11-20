@@ -1,0 +1,116 @@
+{
+  "chapter": 2,
+  "measuredAt": "2026-11-20T13:11:16.463Z",
+  "engine": "chrome 157",
+  "crossOriginIsolated": true,
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36",
+  "tier": 3,
+  "blockedChapters": [],
+  "capabilities": [
+    {
+      "id": "workers",
+      "tier": 1,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 3,
+      "fallback": "everything on the main thread, and the page freezes during a job"
+    },
+    {
+      "id": "offscreen-canvas",
+      "tier": 1,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 6,
+      "fallback": "decode on the main thread, one frame at a time"
+    },
+    {
+      "id": "indexeddb",
+      "tier": 1,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 9,
+      "fallback": "no persistence between visits"
+    },
+    {
+      "id": "compression-streams",
+      "tier": 1,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 17,
+      "fallback": "a JavaScript deflate, slower and larger"
+    },
+    {
+      "id": "wasm",
+      "tier": 2,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 4,
+      "fallback": "no FFmpeg: the chapter is the end of the book"
+    },
+    {
+      "id": "wasm-streaming",
+      "tier": 2,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 4,
+      "fallback": "fetch the module as bytes, then compile"
+    },
+    {
+      "id": "threads",
+      "tier": 2,
+      "verdict": "present",
+      "why": "isolation and SharedArrayBuffer are both in place",
+      "chapter": 4,
+      "fallback": "single-threaded FFmpeg: one core, roughly a third of the speed"
+    },
+    {
+      "id": "webcodecs",
+      "tier": 2,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 5,
+      "fallback": "stay on FFmpeg for every decode, and pay for it"
+    },
+    {
+      "id": "opfs",
+      "tier": 3,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 3,
+      "fallback": "memory only: a reload loses the upload"
+    },
+    {
+      "id": "opfs-sync",
+      "tier": 3,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 3,
+      "fallback": "asynchronous writes, and a slower FFmpeg file layer"
+    },
+    {
+      "id": "webgpu",
+      "tier": 3,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 6,
+      "fallback": "WebGL, or a CPU filter at a fraction of the throughput"
+    },
+    {
+      "id": "file-system-access",
+      "tier": 3,
+      "verdict": "present",
+      "why": "the probe touched it and it answered",
+      "chapter": 3,
+      "fallback": "a download per file, chosen by the user"
+    }
+  ],
+  "browser": "Chrome 157.0.8103.79",
+  "runtime": {
+    "name": "chrome",
+    "version": "157.0.8103.79"
+  },
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "0a66a79c49e873a7348193d9be179a3c7bc4c0717eac18b03651c3ee441efee1"
+  }
+}

@@ -6,8 +6,10 @@
  *   node tools/check_headers.mjs chapter01
  *
  * The check is on the response, not on the source: it starts the chapter's own
- * server on an ephemeral port, fetches the document and the module script, and
- * reads the headers back. A constant in a file is not a header.
+ * server on an ephemeral port, fetches the document, finds the module the
+ * document actually loads, fetches that too, and reads the headers back. A
+ * constant in a file is not a header, and a module loaded without the headers is
+ * a page that cannot use SharedArrayBuffer whatever the document says.
  */
 
 const chapter = process.argv[2] ?? "chapter01";
@@ -39,26 +41,39 @@ async function load(chapterId) {
 const serverModule = await load(chapter);
 const server = serverModule.createServer();
 await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
-const { port } = server.address();
+const base = `http://127.0.0.1:${server.address().port}`;
 
-let passed = 0;
 const failures = [];
+let passed = 0;
 
-for (const path of ["/", "/client.ts"]) {
-  const response = await fetch(`http://127.0.0.1:${port}${path}`);
+async function check(path, what) {
+  const response = await fetch(`${base}${path}`);
   if (!response.ok) {
-    failures.push(`${path}: ${response.status} ${response.statusText}`);
-    continue;
+    failures.push(`${what} (${path}): ${response.status} ${response.statusText}`);
+    return null;
   }
   for (const [name, value] of Object.entries(REQUIRED)) {
     const actual = response.headers.get(name);
     if (actual === value) {
       passed += 1;
     } else {
-      failures.push(`${path}: ${name} is ${actual ?? "missing"}, expected ${value}`);
+      failures.push(`${what} (${path}): ${name} is ${actual ?? "missing"}, expected ${value}`);
     }
   }
+  return response;
 }
+
+const document = await check("/", "document");
+let modulePath = "/client.ts";
+if (document) {
+  const html = await document.text();
+  const match = html.match(/<script[^>]+src="([^"]+)"/i);
+  // Resolve against the document's final URL, after any redirect: that is the URL
+  // the browser resolves relative imports against.
+  if (match) modulePath = new URL(match[1], document.url).pathname;
+}
+
+await check(modulePath, "module script");
 
 server.close();
 
@@ -68,4 +83,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log(`${chapter}: 2/2 headers ok (on the document and on the module script)`);
+console.log(`${chapter}: 2/2 headers ok (on the document and on ${modulePath})`);
