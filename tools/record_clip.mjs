@@ -7,7 +7,7 @@
  *   runs/chapter05/canvas-clip/{record.json, baseline.md, browser.log, screenshot.png}
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { chromium } from "playwright-core";
@@ -79,7 +79,17 @@ async function main() {
 
   const first = await page.evaluate(() => window.__clip());
   const second = await page.evaluate(() => window.__clip());
+  await page.click("#run");
+  await page.waitForFunction(
+    () => (document.querySelector("#out")?.textContent ?? "").includes("speed"),
+    { timeout: 120_000 },
+  );
   await page.screenshot({ path: join(DIR, "screenshot.png"), fullPage: true });
+  mkdirSync(join(ROOT, "chapters", CHAPTER, "images"), { recursive: true });
+  copyFileSync(
+    join(DIR, "screenshot.png"),
+    join(ROOT, "chapters", CHAPTER, "images", "run_canvas_clip.png"),
+  );
 
   await browser.close();
   server.close();

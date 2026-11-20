@@ -3,7 +3,7 @@
   "chapter": 4,
   "workload": "sample.mp4, 2 s, 320x180, crf 30, scale 160",
   "engine": "chrome",
-  "measuredAt": "2026-11-20T14:10:52.471Z",
+  "measuredAt": "2026-11-20T20:03:55.219Z",
   "browser": "Chrome 157.0.8103.79",
   "crossOriginIsolated": true,
   "args": "-i input.mp4 -c:v libx264 -crf 30 -preset veryfast -pix_fmt yuv420p -vf scale=160:-2 -c:a aac -b:a 48k -movflags +faststart output.mp4",
@@ -12,34 +12,34 @@
       "codec": "h264",
       "inputBytes": 34267,
       "outputBytes": 24051,
-      "wallClockMs": 172.20500000193715,
+      "wallClockMs": 239.7550000026822,
       "mediaMs": 2020,
       "width": 160,
       "height": 90,
-      "coreLoadMs": 139.64499999955297,
+      "coreLoadMs": 149.15999999642372,
       "coreBytes": 32232419
     },
     {
       "codec": "h264",
       "inputBytes": 34267,
       "outputBytes": 24051,
-      "wallClockMs": 74.83999999985099,
+      "wallClockMs": 121.54999999701977,
       "mediaMs": 2020,
       "width": 160,
       "height": 90,
-      "coreLoadMs": 139.64499999955297,
+      "coreLoadMs": 149.15999999642372,
       "coreBytes": 32232419
     }
   ],
   "native": {
-    "wallClockMs": 81.09166699999969,
+    "wallClockMs": 203.1968750000001,
     "outputBytes": 23932,
     "version": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
     "mediaMs": 2020
   },
   "packages": {
     "lockfile": "package-lock.json",
-    "sha256": "b556b22b1c671ea8265dd3ff394204e1372c43649a0a67cbb875ae4ca7767232",
+    "sha256": "bf54ab8078ce3ec52cb5d36158c0bfec90941fbbcc0078540bf07e4311755c55",
     "ffmpeg": "0.12.15",
     "core": "0.12.10"
   }

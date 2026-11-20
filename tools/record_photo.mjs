@@ -7,7 +7,7 @@
  *   runs/chapter06/image-pipeline/{record.json, baseline.md, browser.log, screenshot.png}
  */
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { chromium } from "playwright-core";
@@ -85,7 +85,17 @@ async function main() {
   // The first run pays for nine megabytes of WebAssembly; the second is the pipeline.
   const cold = await page.evaluate(() => window.__pipeline());
   const output = await page.evaluate(() => window.__pipeline());
+  await page.click("#run");
+  await page.waitForFunction(
+    () => (document.querySelector("#out")?.textContent ?? "").includes("->"),
+    { timeout: 120_000 },
+  );
   await page.screenshot({ path: join(DIR, "screenshot.png"), fullPage: true });
+  mkdirSync(join(ROOT, "chapters", CHAPTER, "images"), { recursive: true });
+  copyFileSync(
+    join(DIR, "screenshot.png"),
+    join(ROOT, "chapters", CHAPTER, "images", "run_image_pipeline.png"),
+  );
 
   await browser.close();
   server.close();

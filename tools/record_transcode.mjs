@@ -11,7 +11,7 @@
  */
 
 import { spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { chromium } from "playwright-core";
@@ -129,7 +129,19 @@ async function main() {
   const first = await page.evaluate(() => window.__transcode());
   const second = await page.evaluate(() => window.__transcode());
 
+  // The picture the book prints: the page at the end of a run it drove through its own button, so
+  // the reader sees the interface they will see rather than an empty page.
+  await page.click("#run");
+  await page.waitForFunction(
+    () => (document.querySelector("#out")?.textContent ?? "").includes("real time"),
+    { timeout: 180_000 },
+  );
   await page.screenshot({ path: join(DIR, "screenshot.png"), fullPage: true });
+  mkdirSync(join(ROOT, "chapters", CHAPTER, "images"), { recursive: true });
+  copyFileSync(
+    join(DIR, "screenshot.png"),
+    join(ROOT, "chapters", CHAPTER, "images", "run_transcode_fixture.png"),
+  );
   await browser.close();
   server.close();
 

@@ -3,7 +3,7 @@
 Written by `tools/record_clip.mjs`. The clip is drawn, encoded and decoded in the page:
 there is no file to demux and no server in the path.
 
-Measured 2026-11-20T14:29:08.973Z. Chrome Chrome 157.0.8103.79, 320x180.
+Measured 2026-11-20T20:05:03.536Z. Chrome Chrome 157.0.8103.79, 320x180.
 
 | | value |
 | --- | --- |
@@ -11,9 +11,9 @@ Measured 2026-11-20T14:29:08.973Z. Chrome Chrome 157.0.8103.79, 320x180.
 | frames | 60 at 30 fps |
 | keyframes | 5, every 12 |
 | bytes | 58165 |
-| encode, warm | 161.4 ms (12.4x real time) |
-| encode, first run | 178.0 ms: the compiler was cold |
-| decode | 11.8 ms |
+| encode, warm | 179.1 ms (11.2x real time) |
+| encode, first run | 193.5 ms: the compiler was cold |
+| decode | 15.1 ms |
 | startup | 0 bytes of WebAssembly: the codec is the platform's |
 
 ## What the record says

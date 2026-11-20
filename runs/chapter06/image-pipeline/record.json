@@ -3,7 +3,7 @@
   "chapter": 6,
   "workload": "cover.heic and cover.jpg, both to 320 wide WebP at quality 0.8",
   "engine": "chrome",
-  "measuredAt": "2026-11-20T14:54:50.770Z",
+  "measuredAt": "2026-11-20T20:05:38.454Z",
   "browser": "Chrome 157.0.8103.79",
   "formats": {
     "image/webp": true,
@@ -18,8 +18,8 @@
       "format": "image/webp",
       "width": 320,
       "height": 180,
-      "decodeMs": 9.370000001043081,
-      "encodeMs": 4.239999998360872,
+      "decodeMs": 14.53999999910593,
+      "encodeMs": 6.7650000005960464,
       "metadataRemoved": 0
     },
     {
@@ -29,8 +29,8 @@
       "format": "image/webp",
       "width": 180,
       "height": 320,
-      "decodeMs": 0.8999999985098839,
-      "encodeMs": 3.875,
+      "decodeMs": 0.9500000029802322,
+      "encodeMs": 6.570000000298023,
       "metadataRemoved": 1
     }
   ],
@@ -42,8 +42,8 @@
       "format": "image/webp",
       "width": 320,
       "height": 180,
-      "decodeMs": 47.41499999910593,
-      "encodeMs": 7.199999999254942,
+      "decodeMs": 68.89000000059605,
+      "encodeMs": 9.895000003278255,
       "metadataRemoved": 0
     },
     {
@@ -53,8 +53,8 @@
       "format": "image/webp",
       "width": 180,
       "height": 320,
-      "decodeMs": 3.780000001192093,
-      "encodeMs": 5.385000001639128,
+      "decodeMs": 3.5049999952316284,
+      "encodeMs": 7.269999995827675,
       "metadataRemoved": 1
     }
   ],

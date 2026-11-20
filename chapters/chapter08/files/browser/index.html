@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 8 - a file larger than the address space</title>
+    <style>
+      body {
+        font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        margin: 0;
+        padding: 28px;
+        background: #f1ede3;
+        color: #14213a;
+      }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 14px; color: #4a5568; }
+      button, input { font: inherit; }
+      progress { width: 320px; height: 10px; }
+      pre {
+        padding: 16px;
+        background: #14213a;
+        color: #e8e2d4;
+        border-radius: 4px;
+        overflow-x: auto;
+        min-height: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 8 - one chunk at a time</h1>
+    <p id="status">choose a file; it is never uploaded</p>
+    <p>
+      The page hashes the file through <code>File.slice</code>, one chunk at a time, with an
+      accumulator it brings itself: <code>SubtleCrypto.digest</code> takes a whole buffer, and a
+      whole buffer is the thing this chapter cannot afford.
+    </p>
+    <p><input id="file" type="file" /> <progress id="bar" value="0" max="1"></progress></p>
+    <pre id="out">no run yet</pre>
+    <script type="module" src="./stream-client.ts"></script>
+  </body>
+</html>

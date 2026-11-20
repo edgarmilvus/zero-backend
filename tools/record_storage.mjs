@@ -12,7 +12,7 @@
  */
 
 import { spawnSync } from "node:child_process";
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { chromium } from "playwright-core";
@@ -101,6 +101,13 @@ async function main() {
   await page.waitForFunction(() => typeof window.__chapter3list === "function", { timeout: 30_000 });
   const afterReload = await page.evaluate(() => window.__chapter3list());
   await page.screenshot({ path: join(DIR, "after.png") });
+  // The canonical shot of the run, and the copy the book prints.
+  await page.screenshot({ path: join(DIR, "screenshot.png") });
+  mkdirSync(join(ROOT, "chapters", CHAPTER, "images"), { recursive: true });
+  copyFileSync(
+    join(DIR, "screenshot.png"),
+    join(ROOT, "chapters", CHAPTER, "images", "run_opfs_roundtrip.png"),
+  );
   const sync = await page.evaluate(() => window.__chapter3());
 
   await browser.close();

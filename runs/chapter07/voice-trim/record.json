@@ -3,7 +3,7 @@
   "chapter": 7,
   "workload": "voice.wav, 3 s of 44.1 kHz PCM, trimmed",
   "engine": "chrome",
-  "measuredAt": "2026-11-20T15:06:42.183Z",
+  "measuredAt": "2026-11-20T20:06:05.745Z",
   "browser": "Chrome 157.0.8103.79",
   "formats": {},
   "sampleRate": 44100,

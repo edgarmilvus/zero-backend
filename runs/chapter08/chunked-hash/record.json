@@ -1,0 +1,21 @@
+{
+  "id": "chunked-hash",
+  "chapter": 8,
+  "workload": "0.27 GB through File.slice",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T20:19:48.241Z",
+  "browser": "Chrome 157.0.8103.79",
+  "file": "/tmp/rand256.bin",
+  "name": "rand256.bin",
+  "sizeBytes": 268435456,
+  "chunkMb": 64,
+  "chunks": 4,
+  "bytesRead": 268435456,
+  "wallClockMs": 140.15999999642372,
+  "megabytesPerSecond": 1915.2073059849406,
+  "largestChunkBytes": 67108864,
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "bf54ab8078ce3ec52cb5d36158c0bfec90941fbbcc0078540bf07e4311755c55"
+  }
+}

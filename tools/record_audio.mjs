@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Records the audio page: read, meter, trim. Writes runs/chapter07/voice-trim/. */
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { chromium } from "playwright-core";
@@ -69,7 +69,17 @@ async function main() {
   await page.waitForFunction(() => typeof window.__audio === "function", { timeout: 30_000 });
   const first = await page.evaluate(() => window.__audio());
   const second = await page.evaluate(() => window.__audio());
+  await page.click("#run");
+  await page.waitForFunction(
+    () => (document.querySelector("#out")?.textContent ?? "").includes("LUFS"),
+    { timeout: 60_000 },
+  );
   await page.screenshot({ path: join(DIR, "screenshot.png"), fullPage: true });
+  mkdirSync(join(ROOT, "chapters", CHAPTER, "images"), { recursive: true });
+  copyFileSync(
+    join(DIR, "screenshot.png"),
+    join(ROOT, "chapters", CHAPTER, "images", "run_voice_trim.png"),
+  );
 
   await browser.close();
   server.close();

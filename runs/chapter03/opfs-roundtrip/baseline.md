@@ -3,7 +3,7 @@
 Written by `tools/record_storage.mjs`. The browser half is the chapter's own page; the
 node half is `04_opfs_roundtrip.ts`, which runs the same port against memory.
 
-Measured 2026-11-20T13:43:06.526Z. Chrome Chrome 157.0.8103.79.
+Measured 2026-11-20T19:48:43.453Z. Chrome Chrome 157.0.8103.79.
 
 | | chrome, OPFS | node, memory |
 | --- | --- | --- |
@@ -24,14 +24,14 @@ A memory store would have listed zero, because a reload destroys the heap.
 ```text
 store            memory (this runtime has no OPFS)
 
-four 512 kB writes               2097152 bytes        0.1 ms  38479.9 MB/s
+four 512 kB writes               2097152 bytes        0.1 ms  21408.7 MB/s
 
 file                               bytes  modified
 ----------------------------------------  --------
-chunk-0.bin                       524288  13:43:06
-chunk-1.bin                       524288  13:43:06
-chunk-2.bin                       524288  13:43:06
-chunk-3.bin                       524288  13:43:06
+chunk-0.bin                       524288  19:48:43
+chunk-1.bin                       524288  19:48:43
+chunk-2.bin                       524288  19:48:43
+chunk-3.bin                       524288  19:48:43
 
   4 files, 2,097,152 bytes
 

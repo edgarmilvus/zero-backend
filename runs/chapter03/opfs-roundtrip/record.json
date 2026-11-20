@@ -3,7 +3,7 @@
   "chapter": 3,
   "workload": "eight 64 kB files through a queue of four",
   "engine": "chrome",
-  "measuredAt": "2026-11-20T13:43:06.526Z",
+  "measuredAt": "2026-11-20T19:48:43.453Z",
   "browser": "Chrome 157.0.8103.79",
   "crossOriginIsolated": true,
   "store": "opfs",
@@ -15,18 +15,18 @@
   "writes": {
     "files": 8,
     "bytes": 524288,
-    "throughput": "eight 64 kB writes                524288 bytes       10.0 ms  52.5 MB/s"
+    "throughput": "eight 64 kB writes                524288 bytes        9.6 ms  54.5 MB/s"
   },
   "afterReload": {
     "store": "opfs",
     "files": 9,
     "bytes": 525312,
-    "inventory": "file                               bytes  modified\n----------------------------------------  --------\njob-1.bin                          65536  13:43:06\njob-2.bin                          65536  13:43:06\njob-3.bin                          65536  13:43:06\njob-4.bin                          65536  13:43:06\njob-5.bin                          65536  13:43:06\njob-6.bin                          65536  13:43:06\njob-7.bin                          65536  13:43:06\njob-8.bin                          65536  13:43:06\nsync-probe.bin                      1024  13:43:06\n\n  9 files, 525,312 bytes",
+    "inventory": "file                               bytes  modified\n----------------------------------------  --------\njob-1.bin                          65536  19:48:43\njob-2.bin                          65536  19:48:43\njob-3.bin                          65536  19:48:43\njob-4.bin                          65536  19:48:43\njob-5.bin                          65536  19:48:43\njob-6.bin                          65536  19:48:43\njob-7.bin                          65536  19:48:43\njob-8.bin                          65536  19:48:43\nsync-probe.bin                      1024  19:48:43\n\n  9 files, 525,312 bytes",
     "persisted": 8
   },
   "syncHandle": "wrote sync-probe.bin with a synchronous handle, inside a worker",
   "packages": {
     "lockfile": "package-lock.json",
-    "sha256": "0a66a79c49e873a7348193d9be179a3c7bc4c0717eac18b03651c3ee441efee1"
+    "sha256": "bf54ab8078ce3ec52cb5d36158c0bfec90941fbbcc0078540bf07e4311755c55"
   }
 }

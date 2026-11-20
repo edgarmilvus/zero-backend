@@ -3,7 +3,7 @@
 Written by `tools/record_audio.mjs`. The page reads PCM with the chapter's own header parser and
 meters it with the chapter's own functions: no decoder, no AudioContext, no server.
 
-Measured 2026-11-20T15:06:42.183Z. Chrome Chrome 157.0.8103.79.
+Measured 2026-11-20T20:06:05.745Z. Chrome Chrome 157.0.8103.79.
 
 | | value |
 | --- | --- |
