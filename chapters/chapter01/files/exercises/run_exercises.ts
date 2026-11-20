@@ -63,7 +63,7 @@ const exercises: ReadonlyArray<{ id: number; title: string; checks: readonly Che
 
 const EXPECTED = { 1: 8, 2: 9, 3: 10, 4: 9, 5: 12 } as const;
 
-function main(argv: readonly string[]): number {
+async function main(argv: readonly string[]): Promise<number> {
   const onlyIndex = argv.indexOf("--only");
   const only = onlyIndex >= 0 ? Number(argv[onlyIndex + 1]) : null;
   const selected =
@@ -86,7 +86,7 @@ function main(argv: readonly string[]): number {
       return 1;
     }
     console.log(`\nexercise ${exercise.id} - ${exercise.title}`);
-    passed += runChecks(String(exercise.id), exercise.checks);
+    passed += await runChecks(String(exercise.id), exercise.checks);
     total += exercise.checks.length;
   }
 
@@ -95,4 +95,4 @@ function main(argv: readonly string[]): number {
   return passed === total ? 0 : 1;
 }
 
-process.exit(main(process.argv.slice(2)));
+process.exit(await main(process.argv.slice(2)));

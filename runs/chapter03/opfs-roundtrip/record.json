@@ -1,0 +1,32 @@
+{
+  "id": "opfs-roundtrip",
+  "chapter": 3,
+  "workload": "eight 64 kB files through a queue of four",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T13:43:06.526Z",
+  "browser": "Chrome 157.0.8103.79",
+  "crossOriginIsolated": true,
+  "store": "opfs",
+  "queue": {
+    "done": 8,
+    "peak": 4,
+    "limit": 4
+  },
+  "writes": {
+    "files": 8,
+    "bytes": 524288,
+    "throughput": "eight 64 kB writes                524288 bytes       10.0 ms  52.5 MB/s"
+  },
+  "afterReload": {
+    "store": "opfs",
+    "files": 9,
+    "bytes": 525312,
+    "inventory": "file                               bytes  modified\n----------------------------------------  --------\njob-1.bin                          65536  13:43:06\njob-2.bin                          65536  13:43:06\njob-3.bin                          65536  13:43:06\njob-4.bin                          65536  13:43:06\njob-5.bin                          65536  13:43:06\njob-6.bin                          65536  13:43:06\njob-7.bin                          65536  13:43:06\njob-8.bin                          65536  13:43:06\nsync-probe.bin                      1024  13:43:06\n\n  9 files, 525,312 bytes",
+    "persisted": 8
+  },
+  "syncHandle": "wrote sync-probe.bin with a synchronous handle, inside a worker",
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "0a66a79c49e873a7348193d9be179a3c7bc4c0717eac18b03651c3ee441efee1"
+  }
+}

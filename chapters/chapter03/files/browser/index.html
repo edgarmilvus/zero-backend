@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 3 - the tab as a filesystem</title>
+    <style>
+      body {
+        font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        margin: 0;
+        padding: 28px;
+        background: #f1ede3;
+        color: #14213a;
+      }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 14px; color: #4a5568; }
+      button { font: inherit; padding: 6px 12px; margin-right: 8px; }
+      pre {
+        padding: 16px;
+        background: #14213a;
+        color: #e8e2d4;
+        border-radius: 4px;
+        overflow-x: auto;
+        min-height: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 3 - a filesystem and a pool in one tab</h1>
+    <p id="status">opening the store...</p>
+    <p>
+      Eight files through a queue of four, then <strong>reload the page</strong>: with OPFS the
+      inventory is still here, and that is the whole difference between a store and a cache.
+    </p>
+    <button id="run">Write eight files</button>
+    <button id="sync">Write one with a sync handle</button>
+    <pre id="out"></pre>
+    <script type="module" src="./app-client.ts"></script>
+  </body>
+</html>

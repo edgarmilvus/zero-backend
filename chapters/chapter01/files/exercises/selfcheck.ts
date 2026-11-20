@@ -1,14 +1,14 @@
 /**
  * The smallest harness that can fail.
  *
- * Five exercises, five files of assertions, one reporter. Nothing here knows
- * anything about ledgers: that is the point, and it is why the exercises can be
- * tested without a tariff, a record or a file.
+ * Five exercises, five files of assertions, one reporter. Nothing here knows anything about
+ * ledgers, probes or stores: that is the point, and it is why an exercise can be tested without
+ * the chapter it belongs to.
  */
 
 export type Check = {
   readonly name: string;
-  readonly run: () => void | boolean;
+  readonly run: () => void | boolean | Promise<void | boolean>;
 };
 
 export function expect(condition: boolean, message: string): true {
@@ -39,11 +39,19 @@ export function throws(fn: () => unknown, what: string): Error {
   throw new Error(`${what}: nothing was thrown`);
 }
 
-export function runChecks(label: string, checks: readonly Check[]): number {
+/**
+ * Runs a list of checks and returns how many passed.
+ *
+ * Awaited, because a check may be asynchronous and a reporter that does not await would pass
+ * every async check it was given. Chapter 3's first exercise is the reason this signature is
+ * `Promise<number>`.
+ */
+export async function runChecks(label: string, checks: readonly Check[]): Promise<number> {
   let passed = 0;
   for (const [index, entry] of checks.entries()) {
     try {
-      if (entry.run() === false) throw new Error("returned false");
+      const ok = await entry.run();
+      if (ok === false) throw new Error("returned false");
       passed += 1;
       console.log(`  ok   ${label}.${index + 1}  ${entry.name}`);
     } catch (error) {
