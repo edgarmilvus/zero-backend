@@ -50,7 +50,6 @@ record under `runs/`.
 ## Layout
 
 ```
-chapters/chapterNN/spec.yaml       the contract a human reviews: invariant, artifacts, gates
 chapters/chapterNN/files/          what the prose publishes, file for file
 chapters/chapterNN/files/exercises the five exercises and their harness
 chapters/chapter01/files/browser/  the page and the static server with COOP/COEP
