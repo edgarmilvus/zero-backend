@@ -1,0 +1,24 @@
+{
+  "id": "voice-trim",
+  "chapter": 7,
+  "workload": "voice.wav, 3 s of 44.1 kHz PCM, trimmed",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T15:06:42.183Z",
+  "browser": "Chrome 157.0.8103.79",
+  "formats": {},
+  "sampleRate": 44100,
+  "seconds": 3,
+  "peakDbfs": -6.020599913279624,
+  "rmsDbfs": -9.028632741063914,
+  "loudness": -10.829035918289334,
+  "ungated": -14.003163359110795,
+  "silenceRuns": 2,
+  "keptSeconds": 1.1999773242630385,
+  "cutSeconds": 1.8000226757369615,
+  "trimmedBytes": 105882,
+  "originalBytes": 264678,
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "bf54ab8078ce3ec52cb5d36158c0bfec90941fbbcc0078540bf07e4311755c55"
+  }
+}

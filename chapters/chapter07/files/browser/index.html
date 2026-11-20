@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 7 - audio in the tab</title>
+    <style>
+      body {
+        font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        margin: 0;
+        padding: 28px;
+        background: #f1ede3;
+        color: #14213a;
+      }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 14px; color: #4a5568; }
+      button { font: inherit; padding: 6px 12px; }
+      canvas { width: 100%; max-width: 720px; height: 120px; background: #14213a; border-radius: 4px; }
+      pre {
+        padding: 16px;
+        background: #14213a;
+        color: #e8e2d4;
+        border-radius: 4px;
+        overflow-x: auto;
+        min-height: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 7 - samples, meters and a trim</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      Three seconds of 44.1 kHz PCM: a second of silence, a second of a 440 Hz tone at half
+      amplitude, a second of silence. The page reads the header, meters the file, draws the
+      waveform and cuts the silence.
+    </p>
+    <button id="run">Read and trim</button>
+    <p><canvas id="wave" width="720" height="120"></canvas></p>
+    <pre id="out">no run yet</pre>
+    <script type="module" src="./audio-client.ts"></script>
+  </body>
+</html>

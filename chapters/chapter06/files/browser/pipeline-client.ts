@@ -20,7 +20,8 @@ export type PipelineOutput = {
 };
 
 async function bitmapFrom(bytes: Uint8Array): Promise<ImageBitmap> {
-  return createImageBitmap(new Blob([bytes]));
+  // A fresh view, because Blob wants an ArrayBuffer-backed one and a subarray need not be.
+  return createImageBitmap(new Blob([new Uint8Array(bytes)]));
 }
 
 /** Draws a decoded picture at the target size and encodes it. */
