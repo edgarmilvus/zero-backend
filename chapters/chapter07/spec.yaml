@@ -1,0 +1,14 @@
+book: "Zero Backend"
+chapter: 7
+title: "Audio: Waveforms, Loudness, and Silence"
+subtitle: "PCM in the tab: peaks, EBU R128 loudness, and cutting silence without a server"
+
+words: { target: 16000, floor: 14000 }
+
+# Filled by the chapter contract (skill: make-a-book-long-chapter), not before:
+#   harness, harness_expected, exercises, exercises_expected,
+#   listings, words, headings, run_blocks
+gates: {}
+
+# One entry per file under chapters/chapterNN/files/, filled with the contract.
+artifacts: []

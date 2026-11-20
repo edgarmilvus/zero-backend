@@ -1,0 +1,159 @@
+book: "Zero Backend"
+chapter: 1
+title: "The Server You Are Still Paying For"
+subtitle: "Egress, queue time, and a ledger that prices one workload two ways"
+
+invariant: >
+  A cost claim without a record is an opinion: one workload, priced on both paths and
+  measured on the client, decides whether the server moves.
+
+audience:
+  reader: "Senior software engineer. Fluent in TypeScript and Node. No browser-internals background."
+  assumes:
+    - "reading and writing TypeScript modules"
+    - "a shell, and the difference between wall clock and CPU time"
+    - "what an HTTP upload is"
+  does_not_assume: ["WebAssembly", "Web Workers", "OPFS", "any cloud provider's pricing model"]
+
+structure:
+  - Opening (3 paragraphs, no headings)
+  - Theoretical Foundations (10 subsections, 400-700 words each)
+  - Basic Code Example
+  - Common Pitfalls (10-12)
+  - Advanced Application Implementation
+  - How to run it
+  - Reading a Transcript
+  - Practical Exercises (requirements only)
+  - Solutions (five-part Instructor's Analysis)
+  - What this chapter established
+
+theory_subsections:
+  - "The task this chapter runs: one reel, one bill nobody reads"
+  - "What a server bill is made of: requests, seconds, and bytes"
+  - "Egress is the column that decides more architectures than latency does"
+  - "Queue time is not latency, and users only feel latency"
+  - "A measured client is still a machine: why wall clock and peak heap, not a formula"
+  - "The fifth column: every workload loses something, and naming it is the work"
+  - "Why a ledger and not a spreadsheet: the numbers have to survive a tariff change"
+  - "Extrapolation you can price: per job against per thousand, and where the lines cross"
+  - "The three numbers a reader will argue with, and the answer each one needs"
+  - "Decision table: move it, leave it, or refuse it"
+
+artifacts:
+  - chapters/chapter01/files/tariff.ts
+  - chapters/chapter01/files/ledger.ts
+  - chapters/chapter01/files/measure.ts
+  - chapters/chapter01/files/report.ts
+  - chapters/chapter01/files/reel.ts
+  - chapters/chapter01/files/01_price_one_job.ts
+  - chapters/chapter01/files/02_compare_paths.ts
+  - chapters/chapter01/files/03_read_the_record.ts
+  - chapters/chapter01/files/04_extrapolate_at_scale.ts
+  - chapters/chapter01/files/05_hash_the_file.ts
+  - chapters/chapter01/files/run_ex1.ts
+  - chapters/chapter01/files/browser/index.html
+  - chapters/chapter01/files/browser/client.ts
+  - chapters/chapter01/files/browser/serve.mjs
+  - chapters/chapter01/files/exercises/ex1_egress_twice.ts
+  - chapters/chapter01/files/exercises/ex2_photobatch.ts
+  - chapters/chapter01/files/exercises/ex3_measure_not_formula.ts
+  - chapters/chapter01/files/exercises/ex4_say_no.ts
+  - chapters/chapter01/files/exercises/ledger_core.ts
+  - chapters/chapter01/files/exercises/ledger_record.ts
+  - chapters/chapter01/files/exercises/ex5_ledger.ts
+  - chapters/chapter01/files/exercises/run_exercises.ts
+  - chapters/chapter01/files/exercises/selfcheck.ts
+
+gates:
+  harness: "node chapters/chapter01/files/run_ex1.ts"
+  harness_expected: "48/48 checks passed"
+  exercises: "node chapters/chapter01/files/exercises/run_exercises.ts"
+  exercises_expected: "48/48 exercise checks passed"
+  listings: "python3 tools/check_listings.py chapter01"
+  words: "python3 tools/check_words.py chapter01"
+  headings: "python3 tools/check_headings.py chapter01"
+  run_blocks: "python3 tools/check_run_blocks.py chapter01"
+  figures: "python3 tools/check_figures.py chapter01"
+  headers: "node tools/check_headers.mjs chapter01"
+  headers_expected: "2/2 headers ok"
+
+words: { target: 16000, floor: 14000 }
+
+api_surface:
+  tariff.ts: ["Tariff", "TARIFF_2026_11", "TariffSource", "UNIT", "priceRequest", "priceSecond", "priceEgress", "priceStorage"]
+  ledger.ts: ["Workload", "Path", "CostRow", "price", "compare", "breakEven", "formatRow", "formatTable"]
+  measure.ts: ["Measurement", "measureOnce", "measureFile", "sha256", "peakHeapBytes", "readBytes"]
+  report.ts: ["renderMarkdown", "renderCsv", "assertFiveColumns", "assertNoEmptyLossColumn"]
+  reel.ts: ["REEL", "withMeasurement", "refused"]
+  browser/client.ts: ["measureInPage", "reportToWorker"]
+  01_price_one_job.ts: ["main"]
+  02_compare_paths.ts: ["main"]
+  03_read_the_record.ts: ["main"]
+  04_extrapolate_at_scale.ts: ["main"]
+  05_hash_the_file.ts: ["main"]
+  exercises/ledger_core.ts: ["Ledger", "newLedger", "addPath", "rowFor", "total"]
+  exercises/ledger_record.ts: ["RecordSchema", "readRecord", "validateRecord", "normalize"]
+  exercises/ex5_ledger.ts: ["main"]
+
+exercises:
+  - id: 1
+    title: "The tariff that counts egress twice"
+    kind: repair
+    files: [ex1_egress_twice.ts]
+    tests: 8
+    problem: "A ledger charges a 120 MB upload for egress and the 40 KB reply for egress in the same row, and the sum on screen is 4,096 times the real bill."
+  - id: 2
+    title: "A second workload: the four-thousand-photo batch"
+    kind: extend
+    files: [ex2_photobatch.ts]
+    tests: 9
+    problem: "Per-job pricing hides the fan-out. The batch costs twelve times a reel per job and a three-hundredth per photo, so the row has to say per thousand what, and the number that grows with four thousand items is the clock, not the bill."
+  - id: 3
+    title: "The client number is not a formula"
+    kind: measure
+    files: [ex3_measure_not_formula.ts]
+    tests: 10
+    problem: "The table claims a client latency nobody measured. Measure the same operation in Node and in Chromium, explain the gap, and replace the estimate with the record."
+  - id: 4
+    title: "The workload the client cannot do"
+    kind: break
+    files: [ex4_say_no.ts]
+    tests: 9
+    problem: "A ledger that always says 'free' is broken. Given a 6 GB single-file transcode on iOS Safari, it must refuse and name the reason, the ceiling and the chapter that handles the fallback."
+  - id: 5
+    title: "One ledger for twenty chapters"
+    kind: integrate
+    files: [ledger_core.ts, ledger_record.ts, ex5_ledger.ts]
+    tests: 12
+    problem: "Every chapter will hand the ledger one measurement record. The wiring must turn any record on disk into the five-column row, and stay testable when the record is invalid."
+
+multi_file_exercise:
+  id: 5
+  files: [ledger_core.ts, ledger_record.ts, ex5_ledger.ts]
+  why: >
+    ledger_core.ts is pure: a workload plus a tariff becomes a row, with no filesystem and
+    no clock. ledger_record.ts owns the effect and the schema: it reads a record.json,
+    refuses a malformed one by naming the field, and knows nothing about pricing.
+    ex5_ledger.ts is the wiring, and it should be the shortest of the three, because the
+    decision of which column a record fills belongs in core. The seam is the validated
+    record object, so core is tested with a literal and the reader is tested with a
+    malformed file.
+
+figures:
+  - "The two paths for one reel: browser, upload edge, queue, worker, download, browser, with the bytes counted at every edge"
+  - "The five-position table as a gate: which column rejects which candidate architecture"
+  - "The file graph for this chapter: tariff to ledger to the five examples, and the harness reading all of them"
+  - "Cost per operation against volume: the server line falling and the client line flat, with the crossing marked"
+
+chapter_notes: >
+  The workload is deliberately boring. A reel is read, hashed and measured, not transcoded:
+  chapter 1 exists to isolate the arithmetic, and chapter 4 is where a real transcode moves
+  and the reader's eyebrows go up. A harness that benchmarks FFmpeg here would make the
+  chapter about FFmpeg and leave the ledger unread. The tariff is data with a source URL and
+  the date it was read, never a constant in a formula, so a price change is one file and a
+  re-run. The browser half of the measurement runs in a page served with COOP and COEP by
+  files/browser/serve.mjs, so the chapter's own gate proves the header requirement that
+  chapter 18 will spend a chapter on. There is no runner dependency: node executes the
+  TypeScript directly, in erasable syntax only, so a reader with node 24 and the clone runs
+  the chapter in under a second. typescript and @types/node are dev dependencies used by
+  npm run typecheck, never by the chapter's code.

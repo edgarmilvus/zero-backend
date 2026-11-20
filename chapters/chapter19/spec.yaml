@@ -1,0 +1,14 @@
+book: "Zero Backend"
+chapter: 19
+title: "The Capstone: One Static App, No Backend"
+subtitle: "Assembling twenty chapters into a single static artifact on a CDN"
+
+words: { target: 16000, floor: 14000 }
+
+# Filled by the chapter contract (skill: make-a-book-long-chapter), not before:
+#   harness, harness_expected, exercises, exercises_expected,
+#   listings, words, headings, run_blocks
+gates: {}
+
+# One entry per file under chapters/chapterNN/files/, filled with the contract.
+artifacts: []

@@ -1,0 +1,14 @@
+book: "Zero Backend"
+chapter: 20
+title: "Deciding What Leaves the Server"
+subtitle: "Twenty workloads, twenty measurements, one decision table"
+
+words: { target: 16000, floor: 14000 }
+
+# Filled by the chapter contract (skill: make-a-book-long-chapter), not before:
+#   harness, harness_expected, exercises, exercises_expected,
+#   listings, words, headings, run_blocks
+gates: {}
+
+# One entry per file under chapters/chapterNN/files/, filled with the contract.
+artifacts: []

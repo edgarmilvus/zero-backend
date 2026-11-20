@@ -1,0 +1,48 @@
+{
+  "id": "reel-120mb",
+  "chapter": 1,
+  "workload": "reel-120mb",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T11:12:23.271Z",
+  "machine": {
+    "model": "Apple M1",
+    "cores": 8,
+    "totalMemBytes": 8589934592
+  },
+  "os": "darwin 24.3.0",
+  "browser": "Chrome 157.0.8103.79",
+  "runtime": {
+    "name": "chrome",
+    "version": "157.0.8103.79"
+  },
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "0a66a79c49e873a7348193d9be179a3c7bc4c0717eac18b03651c3ee441efee1"
+  },
+  "input": {
+    "name": "generated:120MB",
+    "bytes": 120000000,
+    "sha256": "ec611fec0a1291a101bf0d2b50dbdffe812534c67c5208c1c9e39d816fbeee15"
+  },
+  "result": {
+    "wallClockMs": 127.35499999858439,
+    "peakHeapBytes": 120000000,
+    "heapUsedBytes": 2059848,
+    "sha256": "ec611fec0a1291a101bf0d2b50dbdffe812534c67c5208c1c9e39d816fbeee15",
+    "runs": [
+      {
+        "wallClockMs": 150.97000000067055,
+        "heapUsedBytes": 2057888
+      },
+      {
+        "wallClockMs": 123.16000000014901,
+        "heapUsedBytes": 2059480
+      },
+      {
+        "wallClockMs": 127.35499999858439,
+        "heapUsedBytes": 2059848
+      }
+    ]
+  },
+  "notes": "read, SHA-256 and time in a Worker, page served with COOP/COEP, driven by tools/measure_browser.mjs through a real file input. peakHeapBytes is max(performance.memory.usedJSHeapSize, bytes): the heap figure excludes the ArrayBuffer and the worker isolate, and the buffer is memory the page really held."
+}

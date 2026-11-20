@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 1 - measure the client</title>
+    <style>
+      body {
+        font: 15px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        margin: 0;
+        padding: 32px;
+        background: #f1ede3;
+        color: #14213a;
+      }
+      h1 { font-size: 18px; margin: 0 0 4px; }
+      p { margin: 0 0 20px; color: #4a5568; }
+      input { font: inherit; }
+      pre {
+        margin-top: 20px;
+        padding: 16px;
+        background: #14213a;
+        color: #e8e2d4;
+        border-radius: 4px;
+        min-height: 120px;
+        white-space: pre-wrap;
+      }
+      .iso { color: #1f7a4d; }
+      .not-iso { color: #b3261e; }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 1 - the client column, measured</h1>
+    <p>
+      Pick a video and the page reads it, hashes it in a worker, and prints the
+      number that goes into the ledger. Nothing is uploaded.
+    </p>
+    <p id="isolation"></p>
+    <input id="file" type="file" accept="video/*" />
+    <pre id="out">no measurement yet</pre>
+    <script type="module" src="./client.ts"></script>
+  </body>
+</html>

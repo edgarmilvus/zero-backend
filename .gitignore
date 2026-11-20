@@ -1,0 +1,20 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Python, for the tools that came with a chapter
+.venv/
+__pycache__/
+
+# The book's figures and prose belong to the manuscript, not to the code
+chapters/chapter*/images/
+chapters/chapter*.md
+chapters/chapter*.template.md
+chapters/*.epub
+*.epub
+
+# A recording scratch file
+runs/tmp/
+
+# macOS
+.DS_Store

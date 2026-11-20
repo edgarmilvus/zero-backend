@@ -1,0 +1,14 @@
+book: "Zero Backend"
+chapter: 5
+title: "WebCodecs, or FFmpeg Without FFmpeg"
+subtitle: "Frame-accurate decode and encode through the platform's own codec pipeline"
+
+words: { target: 16000, floor: 14000 }
+
+# Filled by the chapter contract (skill: make-a-book-long-chapter), not before:
+#   harness, harness_expected, exercises, exercises_expected,
+#   listings, words, headings, run_blocks
+gates: {}
+
+# One entry per file under chapters/chapterNN/files/, filled with the contract.
+artifacts: []
