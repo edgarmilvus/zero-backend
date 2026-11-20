@@ -5,3 +5,4 @@
 | capability-profile | 2 | chrome | capability probe | tier 3 | 12 capabilities | 2026-11-20 | [capability-profile](./chapter02/capability-profile/profile.json) |
 | opfs-roundtrip | 3 | chrome | eight 64 kB files | peak 4 in flight | 524288 bytes | 2026-11-20 | [opfs-roundtrip](./chapter03/opfs-roundtrip/record.json) |
 | transcode-fixture | 4 | chrome | sample.mp4 34 kB | 75 ms | 24051 bytes out | 2026-11-20 | [transcode-fixture](./chapter04/transcode-fixture/record.json) |
+| canvas-clip | 5 | chrome | 60 canvas frames | 178 ms encode | 58165 bytes | 2026-11-20 | [canvas-clip](./chapter05/canvas-clip/record.json) |

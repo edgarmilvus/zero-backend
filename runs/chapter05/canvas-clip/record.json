@@ -1,0 +1,39 @@
+{
+  "id": "canvas-clip",
+  "chapter": 5,
+  "workload": "60 canvas frames, 320x180, vp8",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T14:29:08.973Z",
+  "browser": "Chrome 157.0.8103.79",
+  "codec": "vp8",
+  "frames": 60,
+  "keyframes": 5,
+  "keyEvery": 12,
+  "fps": 30,
+  "width": 320,
+  "height": 180,
+  "bytes": 58165,
+  "encodeMs": 161.38500000163913,
+  "decodeMs": 11.754999998956919,
+  "coldMs": 178.0300000011921,
+  "mediaMs": 2000,
+  "decodedFrames": 60,
+  "runs": [
+    {
+      "wallClockMs": 178.0300000011921,
+      "mediaMs": 2000,
+      "outputBytes": 58165
+    },
+    {
+      "wallClockMs": 161.38500000163913,
+      "mediaMs": 2000,
+      "outputBytes": 58165
+    }
+  ],
+  "startupMs": 0,
+  "startupBytes": 0,
+  "packages": {
+    "lockfile": "package-lock.json",
+    "sha256": "b556b22b1c671ea8265dd3ff394204e1372c43649a0a67cbb875ae4ca7767232"
+  }
+}
