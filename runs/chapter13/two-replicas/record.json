@@ -1,0 +1,18 @@
+{
+  "id": "two-replicas",
+  "chapter": 13,
+  "workload": "two replicas, three edits apart, one state exchange",
+  "engine": "chrome",
+  "measuredAt": "2026-11-20T22:30:34.350Z",
+  "browser": "Chrome 157.0.8103.79",
+  "notes": 3,
+  "ids": [
+    "a1",
+    "b1",
+    "shared"
+  ],
+  "conflicts": 1,
+  "added": 1,
+  "ms": 0.09000000357627869,
+  "bytes": 729
+}

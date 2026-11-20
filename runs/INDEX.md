@@ -13,3 +13,4 @@
 | analytics-in-a-tab | 10 | chrome | 1M rows, 2.3 MB parquet | 1221 ms | — | 2026-11-20 | [analytics-in-a-tab](./chapter10/analytics-in-a-tab/record.json) |
 | search-by-meaning | 11 | chrome | 40 notes, 384 dims | 12.0 ms | 60 kB | 2026-11-20 | [search-by-meaning](./chapter11/search-by-meaning/record.json) |
 | model-in-a-worker | 12 | chrome | 23 MB weights | 862 ms | — | 2026-11-20 | [model-in-a-worker](./chapter12/model-in-a-worker/record.json) |
+| two-replicas | 13 | chrome | 2 replicas, 3 edits | 0.09 ms | — | 2026-11-20 | [two-replicas](./chapter13/two-replicas/record.json) |

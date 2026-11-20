@@ -28,12 +28,23 @@ export type Loaded = {
  * install, and a reader who wants the model meets one sentence instead of a stack trace about a
  * missing native binary.
  */
+type Transformers = {
+  pipeline(
+    task: string,
+    model: string,
+    options: Record<string, unknown>,
+  ): Promise<(texts: string[], options: Record<string, unknown>) => Promise<{ dims: number[]; data: Float32Array }>>;
+};
+
 export async function loadModel(): Promise<Loaded> {
   const started = performance.now();
 
-  let transformers: typeof import("@huggingface/transformers");
+  // The specifier is a value, not a literal, so the type checker does not require the package to be
+  // installed: a reader who only runs the index never has to download 287 MB of runtime.
+  const specifier = "@huggingface/transformers";
+  let transformers: Transformers;
   try {
-    transformers = await import("@huggingface/transformers");
+    transformers = (await import(/* @vite-ignore */ specifier)) as unknown as Transformers;
   } catch {
     throw new Error(`the model adapter needs its package: ${INSTALL_HINT}`);
   }

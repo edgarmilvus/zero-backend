@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 13 - two devices, one document</title>
+    <script type="importmap">{ "imports": {} }</script>
+    <style>
+      body { font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; margin: 0; padding: 26px; background: #f1ede3; color: #14213a; }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 12px; color: #4a5568; max-width: 84ch; }
+      .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 14px; }
+      .pane { background: #fff; border: 1px solid #d8d0be; border-radius: 3px; padding: 10px 14px; min-height: 130px; }
+      .pane h2 { font-size: 13px; margin: 0 0 2px; text-transform: uppercase; letter-spacing: 0.06em; color: #7a6a55; }
+      .pane p { font-size: 11px; margin: 0 0 8px; }
+      ul { margin: 0; padding-left: 20px; }
+      li { font-size: 12px; margin-bottom: 4px; }
+      li.empty { color: #9a8a75; }
+      .id { color: #7a6a55; }
+      .buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+      button { font: inherit; font-size: 12px; padding: 6px 10px; cursor: pointer; }
+      button.primary { background: #14213a; color: #f1ede3; border: 1px solid #14213a; }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 13 - two devices, one document</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      Two replicas that have never talked. Edit one, edit the other, then sync: the merge is a function
+      with no server and no order, and both sides end with the same document.
+    </p>
+    <div class="panes">
+      <section class="pane"><h2>laptop</h2><p id="laptop-count">0 note(s), 0 tombstone(s)</p><ul id="laptop"></ul></section>
+      <section class="pane"><h2>phone</h2><p id="phone-count">0 note(s), 0 tombstone(s)</p><ul id="phone"></ul></section>
+    </div>
+    <div class="buttons">
+      <button id="edit-laptop">Edit on the laptop</button>
+      <button id="edit-phone">Edit on the phone</button>
+      <button id="conflict">Both edit the same note</button>
+      <button id="sync" class="primary">Sync</button>
+      <button id="reset">Empty both</button>
+    </div>
+    <script type="module" src="./sync-client.ts"></script>
+  </body>
+</html>
