@@ -73,7 +73,7 @@ async function main() {
   mkdirSync(join(ROOT, "chapters", CHAPTER, "images"), { recursive: true });
   copyFileSync(join(DIR, "screenshot.png"), join(ROOT, "chapters", CHAPTER, "images", "run_one_file.png"));
 
-  const tampered = await page.evaluate(() => window.__tamper());
+  const tampered = await page.evaluate(() => window.__tamperExport());
   const expired = await page.evaluate(() => window.__build("expired"));
 
   await browser.close();

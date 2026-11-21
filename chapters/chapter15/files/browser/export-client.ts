@@ -109,7 +109,7 @@ export async function tamper(): Promise<Built> {
 declare global {
   interface Window {
     __build: (mode?: "sealed" | "tampered" | "expired") => Promise<Built>;
-    __tamper: () => Promise<Built>;
+    __tamperExport: () => Promise<Built>;
     __lastBuild?: Built;
   }
 }
@@ -156,5 +156,5 @@ if (typeof window !== "undefined") {
   });
 
   window.__build = build;
-  window.__tamper = tamper;
+  window.__tamperExport = tamper;
 }

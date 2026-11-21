@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 16 - the app that fits on a floppy</title>
+    <style>
+      body { font: 15px/1.6 ui-serif, Georgia, serif; margin: 0 auto; padding: 28px; max-width: 760px; background: #f7f3e8; color: #1c1a17; }
+      h1 { font-size: 20px; margin: 0 0 2px; }
+      #status, #count { font: 12px/1.5 ui-monospace, monospace; color: #6b6355; margin: 0 0 14px; }
+      form { display: grid; gap: 6px; margin-bottom: 18px; }
+      input, textarea, button { font: inherit; font-size: 14px; padding: 6px 8px; }
+      textarea { min-height: 56px; }
+      .row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+      ul { list-style: none; padding: 0; margin: 0; }
+      li { border-top: 1px solid #ddd4bf; padding: 10px 0; position: relative; }
+      li p { margin: 2px 0 0; white-space: pre-wrap; }
+      li button { position: absolute; right: 0; top: 10px; font-size: 11px; }
+      #find { width: 100%; margin-bottom: 12px; }
+    </style>
+  </head>
+  <body>
+    <h1>Notes, one file</h1>
+    <p id="status">loading</p>
+    <p id="count"></p>
+    <form id="add">
+      <input id="title" placeholder="title" autocomplete="off" />
+      <textarea id="body" placeholder="body"></textarea>
+      <div class="row">
+        <button type="submit">Add</button>
+        <button type="button" id="share">Make a share link</button>
+        <button type="button" id="export">Export one file</button>
+        <label style="font-size:12px;align-self:center">Import <input type="file" id="import" accept="text/html" style="font-size:11px" /></label>
+      </div>
+    </form>
+    <input id="find" placeholder="search" autocomplete="off" />
+    <ul id="notes"></ul>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

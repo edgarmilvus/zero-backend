@@ -1,0 +1,13 @@
+{
+  "id": "one-file-app",
+  "chapter": 16,
+  "workload": "one HTML file opened from disk, two notes, one search",
+  "engine": "chrome",
+  "measuredAt": "2026-11-21T12:02:21.315Z",
+  "browser": "Chrome 157.0.8103.79",
+  "bytes": 14376,
+  "budget": 100000,
+  "modules": 3,
+  "notes": 2,
+  "storedKb": 0.3
+}

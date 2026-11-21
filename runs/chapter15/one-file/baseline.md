@@ -9,10 +9,10 @@ Measured in Chrome Chrome 157.0.8103.79.
 | --- | --- |
 | notes | 12 |
 | file | 6.0 kB |
-| sealed | Notes, verified: sealed 2026-11-21T11:46:14.632Z, 12 note(s), permission valid until 2026-11-21T12:46:14.632Z |
+| sealed | Notes, verified: sealed 2026-11-21T12:03:17.309Z, 12 note(s), permission valid until 2026-11-21T13:03:17.309Z |
 | one note edited after the seal | Not verified: the notes were changed after the file was sealed |
-| expired permission | Not verified: the permission in this file expired at 2026-11-21T10:47:14.886Z |
-| reader | 156 ms to its verdict |
+| expired permission | Not verified: the permission in this file expired at 2026-11-21T11:04:17.567Z |
+| reader | 144 ms to its verdict |
 
 ## What the record says
 
