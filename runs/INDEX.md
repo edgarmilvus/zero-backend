@@ -14,3 +14,4 @@
 | search-by-meaning | 11 | chrome | 40 notes, 384 dims | 12.0 ms | 60 kB | 2026-11-20 | [search-by-meaning](./chapter11/search-by-meaning/record.json) |
 | model-in-a-worker | 12 | chrome | 23 MB weights | 862 ms | — | 2026-11-20 | [model-in-a-worker](./chapter12/model-in-a-worker/record.json) |
 | two-replicas | 13 | chrome | 2 replicas, 3 edits | 0.09 ms | — | 2026-11-20 | [two-replicas](./chapter13/two-replicas/record.json) |
+| share-link | 14 | chrome | one capability | 2.68 ms | — | 2026-11-21 | [share-link](./chapter14/share-link/record.json) |

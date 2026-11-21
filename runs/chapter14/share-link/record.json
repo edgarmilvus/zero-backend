@@ -1,0 +1,14 @@
+{
+  "id": "share-link",
+  "chapter": 14,
+  "workload": "mint a capability, verify it in the fragment, forge its scope",
+  "engine": "chrome",
+  "measuredAt": "2026-11-21T10:38:02.349Z",
+  "browser": "Chrome 157.0.8103.79",
+  "tokenLength": 358,
+  "scope": "read:own, write:own",
+  "recipient": "allowed",
+  "forged": "refused",
+  "reason": "signature: does not match the payload",
+  "verifyMs": 2.6812079999999696
+}

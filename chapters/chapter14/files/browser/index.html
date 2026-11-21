@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 14 - the link is the key</title>
+    <style>
+      body { font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; margin: 0; padding: 26px; background: #f1ede3; color: #14213a; }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 12px; color: #4a5568; max-width: 82ch; }
+      .buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+      button { font: inherit; font-size: 12px; padding: 6px 10px; cursor: pointer; }
+      pre { padding: 16px; background: #14213a; color: #e8e2d4; border-radius: 4px; overflow-x: auto; min-height: 170px; }
+      code { background: #e6dfcf; padding: 1px 4px; }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 14 - the link is the key</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      A capability is four fields and a signature. This page mints one and puts it in the
+      <code>#fragment</code>, which a browser never sends to the server: the permission travels in the
+      link, and the recipient verifies it without asking anyone.
+    </p>
+    <div class="buttons">
+      <button id="mint">Mint a link</button>
+      <button id="open">Open the link as the recipient</button>
+      <button id="tamper">Widen the scope in the address bar</button>
+      <button id="clear">Clear</button>
+    </div>
+    <pre id="out">no run yet</pre>
+    <script type="module" src="./share-client.ts"></script>
+  </body>
+</html>
