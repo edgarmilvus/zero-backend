@@ -39,7 +39,7 @@ Each chapter number and title links to its code in this repository.
 | [17](chapters/chapter17/files/) | [The First Week of a Real User](chapters/chapter17/files/) | a 369-byte report that cannot leak a note |
 | [18](chapters/chapter18/files/) | [The Last Engine: A Worker Pool and Its Scheduler](chapters/chapter18/files/) | a pool, backpressure, cancellation |
 | [19](chapters/chapter19/files/) | [A Calendar That Syncs Two Files](chapters/chapter19/files/) | DST-safe recurrence and `.ics` |
-| [20](chapters/chapter20/files/) | [The Ledger: Twenty Promises and Their Evidence](chapters/chapter20/files/) | twenty claims, one gate |
+| [20](chapters/chapter20/files/) | [Deciding What Leaves the Server](chapters/chapter20/files/) | twenty claims, one gate |
 
 ## Set it up once
 
