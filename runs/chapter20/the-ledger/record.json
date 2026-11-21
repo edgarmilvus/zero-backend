@@ -1,0 +1,12 @@
+{
+  "id": "the-ledger",
+  "chapter": 20,
+  "workload": "twenty claims, twenty files, one page",
+  "engine": "chrome",
+  "measuredAt": "2026-11-21T13:28:56.857Z",
+  "browser": "Chrome 157.0.8103.79",
+  "rows": 20,
+  "ok": 20,
+  "failed": [],
+  "chapters": 20
+}

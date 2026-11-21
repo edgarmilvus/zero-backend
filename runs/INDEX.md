@@ -20,3 +20,4 @@
 | support-report | 17 | chrome | 1 report | — | 369 B | 2026-11-21 | [support-report](./chapter17/support-report/record.json) |
 | worker-pool | 18 | chrome | 6 x 4 MB | 45 ms | 42 ms frame | 2026-11-21 | [worker-pool](./chapter18/worker-pool/record.json) |
 | calendar-across-dst | 19 | chrome | 5 occurrences | — | 511 B .ics | 2026-11-21 | [calendar-across-dst](./chapter19/calendar-across-dst/record.json) |
+| the-ledger | 20 | chrome | 20 claims | — | 20 files | 2026-11-21 | [the-ledger](./chapter20/the-ledger/record.json) |

@@ -1,0 +1,157 @@
+{
+  "chapters": 20,
+  "rows": [
+    {
+      "chapter": 1,
+      "id": "c01",
+      "statement": "A page can decode and seek a video without downloading all of it",
+      "evidence": "runs/chapter01/reel-120mb/record.json",
+      "ok": true
+    },
+    {
+      "chapter": 2,
+      "id": "c02",
+      "statement": "The browser reports what it can do before the feature is written",
+      "evidence": "runs/chapter02/capability-profile/profile.json",
+      "ok": true
+    },
+    {
+      "chapter": 3,
+      "id": "c03",
+      "statement": "A file in the origin private file system survives a reload",
+      "evidence": "runs/chapter03/opfs-roundtrip/record.json",
+      "ok": true
+    },
+    {
+      "chapter": 4,
+      "id": "c04",
+      "statement": "FFmpeg transcodes a file in a tab, measured",
+      "evidence": "runs/chapter04/transcode-fixture/record.json",
+      "ok": true
+    },
+    {
+      "chapter": 5,
+      "id": "c05",
+      "statement": "A clip is cut and re-encoded in the page",
+      "evidence": "runs/chapter05/canvas-clip/record.json",
+      "ok": true
+    },
+    {
+      "chapter": 6,
+      "id": "c06",
+      "statement": "An image pipeline runs on the device, with a cold and a warm number",
+      "evidence": "runs/chapter06/image-pipeline/record.json",
+      "ok": true
+    },
+    {
+      "chapter": 7,
+      "id": "c07",
+      "statement": "Audio is trimmed and measured against a loudness target",
+      "evidence": "runs/chapter07/voice-trim/record.json",
+      "ok": true
+    },
+    {
+      "chapter": 8,
+      "id": "c08",
+      "statement": "A gigabyte in 64 MB chunks costs 76 MB of RSS, against 1,023 whole",
+      "evidence": "runs/chapter08/chunked-hash/record.json",
+      "ok": true,
+      "value": 1915.2073059849406
+    },
+    {
+      "chapter": 9,
+      "id": "c09",
+      "statement": "Postgres runs in the tab with real transactions",
+      "evidence": "runs/chapter09/docs-in-a-tab/record.json",
+      "ok": true,
+      "value": 1000
+    },
+    {
+      "chapter": 10,
+      "id": "c10",
+      "statement": "A million rows become a 2.4 MB Parquet the engine scans",
+      "evidence": "runs/chapter10/analytics-in-a-tab/record.json",
+      "ok": true,
+      "value": 2422153
+    },
+    {
+      "chapter": 11,
+      "id": "c11",
+      "statement": "Meaning finds more of the right subject than words do",
+      "evidence": "runs/chapter11/search-by-meaning/record.json",
+      "ok": true,
+      "value": 0.7
+    },
+    {
+      "chapter": 12,
+      "id": "c12",
+      "statement": "The model loads in a worker while the page keeps painting",
+      "evidence": "runs/chapter12/model-in-a-worker/record.json",
+      "ok": true,
+      "value": 862.2550000026822
+    },
+    {
+      "chapter": 13,
+      "id": "c13",
+      "statement": "Two devices converge without a server",
+      "evidence": "runs/chapter13/two-replicas/record.json",
+      "ok": true,
+      "value": 3
+    },
+    {
+      "chapter": 14,
+      "id": "c14",
+      "statement": "A permission travels in the fragment and verifies without a request",
+      "evidence": "runs/chapter14/share-link/record.json",
+      "ok": true,
+      "value": 358
+    },
+    {
+      "chapter": 15,
+      "id": "c15",
+      "statement": "One file carries its notes, its permission and its reader",
+      "evidence": "runs/chapter15/one-file/record.json",
+      "ok": true,
+      "value": 6097
+    },
+    {
+      "chapter": 16,
+      "id": "c16",
+      "statement": "The whole app fits in fourteen kilobytes under a hundred-kilobyte budget",
+      "evidence": "runs/chapter16/one-file-app/record.json",
+      "ok": true,
+      "value": 14376
+    },
+    {
+      "chapter": 17,
+      "id": "c17",
+      "statement": "A support report contains no note text",
+      "evidence": "runs/chapter17/support-report/record.json",
+      "ok": true,
+      "value": 369
+    },
+    {
+      "chapter": 18,
+      "id": "c18",
+      "statement": "A pool of four keeps the frame under budget",
+      "evidence": "runs/chapter18/worker-pool/record.json",
+      "ok": true,
+      "value": 42.39399999998136
+    },
+    {
+      "chapter": 19,
+      "id": "c19",
+      "statement": "09:00 stays 09:00 across a daylight saving change",
+      "evidence": "runs/chapter19/calendar-across-dst/record.json",
+      "ok": true,
+      "value": 3
+    },
+    {
+      "chapter": 20,
+      "id": "c20",
+      "statement": "Every chapter's claim is checked by a gate that reads its record",
+      "evidence": "chapters/chapter20/files/claims.ts",
+      "ok": true
+    }
+  ]
+}
