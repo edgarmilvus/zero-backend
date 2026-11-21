@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 18 - the last engine</title>
+    <style>
+      body { font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; margin: 0 auto; padding: 26px; max-width: 780px; background: #f8f6f0; color: #1c1a17; }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 12px; color: #4a5568; }
+      .buttons { display: flex; gap: 8px; margin-bottom: 12px; }
+      button { font: inherit; font-size: 12px; padding: 6px 10px; cursor: pointer; }
+      pre { padding: 14px; background: #1c1a17; color: #f1ede3; border-radius: 4px; overflow-x: auto; min-height: 150px; }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 18 - the last engine</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      The same hash over six buffers of sixteen megabytes, once on the main thread and once in a pool of four
+      workers. The frame monitor counts the longest gap between paints in both modes.
+    </p>
+    <div class="buttons">
+      <button id="serial">Hash on the main thread</button>
+      <button id="pooled">Hash in the pool</button>
+    </div>
+    <pre id="out">no run yet</pre>
+    <script type="module" src="./pool-client.ts"></script>
+  </body>
+</html>

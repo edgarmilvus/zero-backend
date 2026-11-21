@@ -1,0 +1,19 @@
+{
+  "id": "worker-pool",
+  "chapter": 18,
+  "workload": "FNV over six 4 MB buffers, main thread and a pool of four",
+  "engine": "chrome",
+  "measuredAt": "2026-11-21T12:31:15.131Z",
+  "browser": "Chrome 157.0.8103.79",
+  "serial": {
+    "ms": 220.44499999983236,
+    "gap": 220.56999999983236
+  },
+  "pooled": {
+    "ms": 45.08999999985099,
+    "gap": 42.39399999998136
+  },
+  "budgetMs": 100,
+  "workers": 4,
+  "tasks": 6
+}

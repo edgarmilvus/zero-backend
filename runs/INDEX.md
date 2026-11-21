@@ -18,3 +18,4 @@
 | one-file-app | 16 | chrome-file | 1 note app | — | 0.3 kB | 2026-11-21 | [one-file-app](./chapter16/one-file-app/record.json) |
 | one-file | 15 | chrome | 12 notes, one file | 144 ms | 6.0 kB | 2026-11-21 | [one-file](./chapter15/one-file/record.json) |
 | support-report | 17 | chrome | 1 report | — | 369 B | 2026-11-21 | [support-report](./chapter17/support-report/record.json) |
+| worker-pool | 18 | chrome | 6 x 4 MB | 45 ms | 42 ms frame | 2026-11-21 | [worker-pool](./chapter18/worker-pool/record.json) |
