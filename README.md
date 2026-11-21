@@ -57,7 +57,7 @@ no constructor parameter properties. There is no build step and no bundler. The 
 Node 26.12.0.
 
 `npm ci` installs the dependencies the later chapters import — FFmpeg compiled to WebAssembly,
-PGlite, DuckDB-Wasm, libheif and `playwright-core`. A clone is about 16 MB; the install adds about
+PGlite, DuckDB-Wasm, libheif and `playwright-core`. A clone is about 24 MB; the install adds about
 290 MB, almost all of it the four engines.
 
 A Node older than 24 cannot strip types and fails on the first file with
@@ -87,7 +87,7 @@ chapter01  green
 gate: green (20 chapter(s))
 ```
 
-Twenty chapters take about forty seconds. The script runs every chapter and exits non-zero if any
+Twenty chapters take about seventy-five seconds. The script runs every chapter and exits non-zero if any
 of them failed, so one red chapter does not hide the rest.
 
 The prose checks are not in this copy, because the manuscript is not; the code is the gate here, and
