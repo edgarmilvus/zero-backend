@@ -62,7 +62,7 @@ run_one() {
   elif [ -f "chapters/$id.md" ]; then
     note "$id" "document checks skipped (the book's sources are not in this copy)"
   else
-    note "$id" "document checks skipped (no .md yet)"
+    note "$id" "document checks skipped (manuscript not in this copy)"
   fi
 
   if [ -f "$dir/files/browser/serve.mjs" ] && [ -f tools/check_headers.mjs ]; then
