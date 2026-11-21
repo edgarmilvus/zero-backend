@@ -248,11 +248,12 @@ and diagrams are © 2026 Edgar Milvus, all rights reserved.
 | `Chromium distribution 'chrome' is not found` | Recorders drive your installed Chrome. Install Chrome, or use a machine that has it. |
 | `bad interpreter: No such file or directory` | `run_offline.sh` has CRLF line endings. See Windows above. |
 | `permission denied: ./run_offline.sh` | `chmod +x run_offline.sh`, once. |
-| a red row in `node chapters/chapter20/files/01_ledger.ts` | A record moved or went missing, so the ledger refuses to call it verified. That is the check working, not a broken checkout. |
+| a red row in `node chapters/chapter20/files/01_ledger.ts` | A record moved or went missing, so the check refuses to call it verified. That is the gate working, not a broken checkout. |
 
-## The ledger
+## The evidence
 
-Chapter 20 checks the other nineteen. Each chapter has one claim and one file that proves it:
+Chapter 20, *Deciding What Leaves the Server*, checks the other nineteen. Each chapter has one
+claim and one file that proves it:
 
 ```bash
 node chapters/chapter20/files/01_ledger.ts
@@ -267,5 +268,5 @@ failed            0
 ```
 
 Every number the book quotes comes from one of these records. If you change a demo, run its chapter
-harness: the assertions are the reason the prose can be specific, and the ledger is the reason the
+harness: the assertions are the reason the prose can be specific, and this table is the reason the
 prose can be checked.
