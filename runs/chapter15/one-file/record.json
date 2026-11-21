@@ -1,0 +1,15 @@
+{
+  "id": "one-file",
+  "chapter": 15,
+  "workload": "one HTML file with twelve notes, a permission and a reader",
+  "engine": "chrome",
+  "measuredAt": "2026-11-21T11:46:15.038Z",
+  "browser": "Chrome 157.0.8103.79",
+  "notes": 12,
+  "bytes": 6097,
+  "digest": "f99e9a315ec0765e5cff314bb11fcb20e4b5e6a175fad0eabd667695680bc05b",
+  "sealed": "Notes, verified: sealed 2026-11-21T11:46:14.632Z, 12 note(s), permission valid until 2026-11-21T12:46:14.632Z",
+  "tampered": "Not verified: the notes were changed after the file was sealed",
+  "expired": "Not verified: the permission in this file expired at 2026-11-21T10:47:14.886Z",
+  "readerMs": 156.19791599999985
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 15 - the export is the product</title>
+    <style>
+      body { font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; margin: 0; padding: 22px; background: #f1ede3; color: #14213a; }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 12px; color: #4a5568; max-width: 84ch; }
+      .buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+      button { font: inherit; font-size: 12px; padding: 6px 10px; cursor: pointer; }
+      pre { padding: 12px; background: #14213a; color: #e8e2d4; border-radius: 4px; overflow-x: auto; min-height: 80px; margin: 10px 0; }
+      iframe { width: 100%; height: 420px; border: 1px solid #d8d0be; border-radius: 3px; background: #f7f3e8; }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 15 - the export is the product</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      The page builds one HTML file with the notes, the permission and the reader inside it, then opens
+      it in the frame below. What you see in the frame is the file's own verdict, not the page's.
+    </p>
+    <div class="buttons">
+      <button id="seal">Build and open the export</button>
+      <button id="tamper">Edit a note after the seal</button>
+      <button id="expire">Build with an expired permission</button>
+    </div>
+    <pre id="out">no file yet</pre>
+    <iframe id="export" sandbox="allow-scripts allow-same-origin" title="the exported file"></iframe>
+    <script type="module" src="./export-client.ts"></script>
+  </body>
+</html>

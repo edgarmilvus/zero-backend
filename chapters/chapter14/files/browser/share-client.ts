@@ -12,11 +12,11 @@ import { verify, type Verdict } from "../verify.ts";
 
 export type PageState = {
   readonly mode: "owner" | "recipient";
-  readonly scope?: string;
-  readonly allowed?: boolean;
-  readonly reason?: string;
-  readonly tokenLength?: number;
-  readonly url?: string;
+  readonly scope?: string | undefined;
+  readonly allowed?: boolean | undefined;
+  readonly reason?: string | undefined;
+  readonly tokenLength?: number | undefined;
+  readonly url?: string | undefined;
 };
 
 const HOUR = 60 * 60 * 1000;
