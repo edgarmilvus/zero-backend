@@ -1,0 +1,13 @@
+{
+  "id": "support-report",
+  "chapter": 17,
+  "workload": "one support report from diagnostics with a redacted message",
+  "engine": "chrome",
+  "measuredAt": "2026-11-21T12:18:20.829Z",
+  "browser": "Chrome 157.0.8103.79",
+  "bytes": 369,
+  "category": "import-failed",
+  "severity": "medium",
+  "checksum": "2adb18d28e421a8d64f40ccea94c54187dfe566d0fcb8055bb85d382c9b8dec4",
+  "leaked": false
+}

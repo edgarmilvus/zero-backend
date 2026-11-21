@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 17 - support without a server</title>
+    <style>
+      body { font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; margin: 0 auto; padding: 26px; max-width: 820px; background: #f8f6f0; color: #1c1a17; }
+      h1 { font-size: 17px; margin: 0 0 4px; }
+      p { margin: 0 0 12px; color: #4a5568; }
+      textarea { width: 100%; font: inherit; font-size: 13px; padding: 7px; }
+      button { font: inherit; font-size: 12px; padding: 6px 10px; margin: 8px 0 12px; cursor: pointer; }
+      pre { padding: 14px; background: #1c1a17; color: #f1ede3; border-radius: 4px; overflow-x: auto; min-height: 190px; }
+      .hint { font-size: 11px; color: #7a6a55; }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 17 - support without a server</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      The app has one note about a combination lock. Type the message it would show, and file a report:
+      the note's words are given to the redactor as secrets, and the report must not contain them.
+    </p>
+    <textarea id="message" rows="2">could not import "Safe combination": the notes were changed after the file was sealed</textarea>
+    <p class="hint">The report carries the build, the environment, the counts and the redacted message. No note text.</p>
+    <button id="send">File the report</button>
+    <pre id="out">no report yet</pre>
+    <script type="module" src="./support-client.ts"></script>
+  </body>
+</html>
