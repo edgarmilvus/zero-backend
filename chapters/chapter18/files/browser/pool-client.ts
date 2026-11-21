@@ -71,7 +71,7 @@ function workerLike(): WorkerLike {
   const worker = new Worker("./hash-worker.ts", { type: "module" });
   return {
     postMessage(message: unknown, transfer?: readonly ArrayBuffer[]) {
-      worker.postMessage(message, transfer as Transferable[] | undefined);
+      worker.postMessage(message, { transfer: [...(transfer ?? [])] as Transferable[] });
     },
     set onmessage(handler: ((event: { data: unknown }) => void) | null) {
       worker.onmessage = handler as ((event: MessageEvent) => void) | null;
@@ -96,7 +96,7 @@ export async function pooled(): Promise<RunResult> {
   const started = performance.now();
   const values = await Promise.all(
     prepared.map((buffer, index) =>
-      pool.run<number>({ id: `h${index}`, payload: buffer.buffer, transfer: [buffer.buffer] }),
+      pool.run<number>({ id: `h${index}`, payload: buffer.buffer as ArrayBuffer, transfer: [buffer.buffer as ArrayBuffer] }),
     ),
   );
   const totalMs = performance.now() - started;
@@ -108,7 +108,7 @@ declare global {
   interface Window {
     __serial: () => Promise<RunResult>;
     __pooled: () => Promise<RunResult>;
-    __lastRun?: RunResult;
+    __lastPoolRun?: RunResult;
   }
 }
 
@@ -119,7 +119,7 @@ if (typeof window !== "undefined") {
   const run = async (mode: "serial" | "pooled"): Promise<void> => {
     if (status) status.textContent = mode === "serial" ? "hashing on the main thread..." : "hashing in four workers...";
     const result = mode === "serial" ? await serial() : await pooled();
-    window.__lastRun = result;
+    window.__lastPoolRun = result;
     if (status) {
       status.textContent = `${mode}: ${result.totalMs.toFixed(0)} ms, longest frame ${result.longestFrameMs.toFixed(0)} ms`;
     }

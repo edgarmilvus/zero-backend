@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>Chapter 19 - a calendar that syncs two files</title>
+    <style>
+      body { font: 14px/1.6 ui-serif, Georgia, serif; margin: 0 auto; padding: 26px; max-width: 900px; background: #f7f3e8; color: #1c1a17; }
+      h1 { font-size: 20px; margin: 0 0 4px; }
+      p { margin: 0 0 12px; color: #4a5568; }
+      table { width: 100%; border-collapse: collapse; font: 12px/1.5 ui-monospace, monospace; margin-bottom: 12px; }
+      th, td { text-align: left; padding: 4px 8px; border-bottom: 1px solid #ddd4bf; }
+      th { color: #7a6a55; font-weight: 600; }
+      .buttons { display: flex; gap: 8px; margin-bottom: 12px; }
+      button { font: inherit; font-size: 12px; padding: 6px 10px; cursor: pointer; }
+      pre { padding: 12px; background: #1c1a17; color: #f1ede3; overflow-x: auto; min-height: 120px; }
+      textarea { width: 100%; font: 12px/1.5 ui-monospace, monospace; }
+    </style>
+  </head>
+  <body>
+    <h1>Chapter 19 - a calendar that syncs two files</h1>
+    <p id="status">nothing has run yet</p>
+    <p>
+      A weekly standup at 09:00 and a flight, in Rome, across the change on 29 March. The wall clock is the
+      promise; the instant on the right is what the machine stores.
+    </p>
+    <div class="buttons">
+      <button id="run">Show a month</button>
+      <button id="export">Export .ics</button>
+      <button id="import">Import the text below</button>
+    </div>
+    <table>
+      <thead><tr><th>wall</th><th>instant</th><th>event</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <textarea id="ics" rows="6">BEGIN:VCALENDAR
+BEGIN:VEVENT
+UID:external-1
+DTSTART;TZID=Europe/Rome:20260402T100000
+DURATION:PT60M
+SUMMARY:Quarterly review\, with the whole team
+END:VEVENT
+END:VCALENDAR</textarea>
+    <pre id="out">no run yet</pre>
+    <script type="module" src="./calendar-client.ts"></script>
+  </body>
+</html>

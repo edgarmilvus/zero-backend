@@ -1,0 +1,13 @@
+{
+  "id": "calendar-across-dst",
+  "chapter": 19,
+  "workload": "a weekly 09:00 event and one flight, Europe/Rome, March-April 2026",
+  "engine": "chrome",
+  "measuredAt": "2026-11-21T13:09:23.211Z",
+  "browser": "Chrome 157.0.8103.79",
+  "rows": 5,
+  "walls": 4,
+  "before": 1,
+  "after": 3,
+  "icsBytes": 511
+}

@@ -63,7 +63,7 @@ async function main() {
   await page.evaluate(() => window.__pooled());
   await page.click("#pooled");
   await page.waitForFunction(() => (document.querySelector("#status")?.textContent ?? "").startsWith("pooled:"), null, { polling: 100, timeout: 60_000 });
-  const pooled = await page.evaluate(() => window.__lastRun);
+  const pooled = await page.evaluate(() => window.__lastPoolRun);
   await page.screenshot({ path: join(DIR, "screenshot.png"), fullPage: true });
   mkdirSync(join(ROOT, "chapters", CHAPTER, "images"), { recursive: true });
   copyFileSync(join(DIR, "screenshot.png"), join(ROOT, "chapters", CHAPTER, "images", "run_worker_pool.png"));
