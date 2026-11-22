@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Records the chunked hash of a real file in Chrome. Writes runs/chapter08/<id>/. */
-import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { closeSync, copyFileSync, existsSync, ftruncateSync, mkdirSync, openSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { chromium } from "playwright-core";
@@ -13,6 +13,15 @@ const CHAPTER = process.argv[2] ?? "chapter08";
 const FILE = process.argv[3] ?? "/tmp/zero1g.bin";
 const ID = "chunked-hash";
 const DIR = join(ROOT, "runs", CHAPTER, ID);
+const FIXTURE_BYTES = 1_000_000_000;
+
+function ensureFixture() {
+  if (existsSync(FILE)) return;
+  const fd = openSync(FILE, "w");
+  ftruncateSync(fd, FIXTURE_BYTES);
+  closeSync(fd);
+  console.log(`fixture           ${FILE} (${FIXTURE_BYTES} bytes, created)`);
+}
 
 function baseline(record) {
   return [
@@ -47,6 +56,7 @@ function baseline(record) {
 }
 
 async function main() {
+  ensureFixture();
   mkdirSync(DIR, { recursive: true });
   const { createServer } = await import(
     pathToFileURL(join(ROOT, "chapters", CHAPTER, "files", "browser", "serve.mjs")).href

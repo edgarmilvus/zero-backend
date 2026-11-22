@@ -185,6 +185,10 @@ has to be installed already.
 | 19 | `node tools/record_calendar.mjs chapter19` | `runs/chapter19/calendar-across-dst/` |
 | 20 | `node tools/record_ledger.mjs chapter20` | `runs/chapter20/the-ledger/` |
 
+Chapter 8 needs a 1 GB file. Its recorder creates `/tmp/zero1g.bin` as a sparse file when it is not
+there, and takes another path as its second argument:
+`node tools/record_stream.mjs chapter08 /path/to/file`.
+
 One recorder is special. Chapter 11 needs a real embedding model, which is **not** a dependency of
 this repository — 287 MB of native runtime for one chapter — so its recorder asks for the package
 explicitly:
