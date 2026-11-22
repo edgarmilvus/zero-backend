@@ -1,6 +1,6 @@
 # Zero Backend — companion code
 
-The code for *Zero Backend: Client-Side Everything in TypeScript*, one folder per chapter.
+The code for *Zero Backend: Scale the Product, Not the Cloud Bill*, one folder per chapter.
 
 The book's argument is simple to state and hard to prove: a browser can do most of the work a server
 is paid for. Each chapter takes one real job — play a large video, convert a photo, query a database,
@@ -15,7 +15,7 @@ are not here; what is here is everything a reader can run and check.
 ## The book
 
 <p align="center">
-  <img src="images/cover.jpg" alt="Zero Backend: Client-Side Everything in TypeScript" width="360">
+  <img src="images/cover.jpg" alt="Zero Backend: Scale the Product, Not the Cloud Bill" width="360">
 </p>
 
 **A field guide to moving real workloads out of the cloud.** Twenty chapters, one workload each: a
