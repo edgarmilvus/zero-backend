@@ -1,3 +1,4 @@
+# Every report needs the facts in one of the two forms; blank issues are off.
 blank_issues_enabled: false
 contact_links:
   - name: Read the setup section first
