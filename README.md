@@ -24,6 +24,8 @@ a bounded amount of memory, a database and a language model running in a tab, a 
 without a server, a permission carried in a link, an app small enough for a floppy disk. Every chapter
 prices the move with a measurement and states what the move cannot do.
 
+[Additional information →](https://tiny.cc/ZeroBackend)
+
 ## The twenty chapters
 
 Each chapter number and title links to its code in this repository. The third column says, in plain
